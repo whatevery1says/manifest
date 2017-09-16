@@ -107,7 +107,7 @@ The `path` property implements MongoDB's ["materialized path"](https://docs.mong
 
 Global properties are properties that can occur in any type of manifest. For this reason, they are not listed amongst the options for specific manifest types unless they are required by that manifest type.
 
-### date
+### `date`
 
 A list of strings or objects containing date values. Dates should be given in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date (`YYYY-MM-DD`) or datetime (e.g. `2017-09-16T12:49:05Z`) format, wherever sufficient information is known. Dates may contain multiple date values or date ranges indicated by the `start` and `end` properties. Here are some examples:
 
@@ -131,19 +131,23 @@ In some instances, it may be necessary to distinguish imprecise date values from
 ]
 ```
 
-### title
-
-This is an optional string value providing a "pretty" title for the manifest. Since `_id` values are used to construct paths, they may not take a form that can be used in this manner, and the `title` property fills this gap.See also the `label` field.
-
-### label
-
-A string value similar to the `title` field but intended for use in graph labels or other outputs where a shortened identifier may be useful.
-
-### description
+### `description`
 
 A text string that can contain an extended prose description of the manifest's content.
 
-### notes
+### `group`
+
+In some cases, it may be necessary to designate group responsibility for authorship, processing steps, and the like. In these cases the keyword `group` can be used. For example:
+
+```javascript
+{"editors": [{"group": "UCSB"}]}
+```
+
+### `label`
+
+A string value similar to the `title` field but intended for use in graph labels or other outputs where a shortened identifier may be useful.
+
+### `notes`
 
 A list of text strings that can contain an extended prose commentary about the record’s content. Each item in the list is a separate `note`. Here are two examples, one containing a single note and one containing two notes:
 
@@ -158,13 +162,13 @@ A list of text strings that can contain an extended prose commentary about the r
 
 *Question: Should we require the keyword `note` or just allow a list of strings (which implies sequence)?*
 
-### group
+### `refLocation`
 
-In some cases, it may be necessary to designate group responsibility for authorship, processing steps, and the like. In these cases the keyword `group` can be used. For example:
+A string value referring to an external location from which the document or data can be accessed. This will typically be a URL but may be a reference to a local file path.
 
-```javascript
-{"editors": [{"group": "UCSB"}]}
-```
+### `title`
+
+This is an optional string value providing a "pretty" title for the manifest. Since `_id` values are used to construct paths, they may not take a form that can be used in this manner, and the `title` property fills this gap.See also the `label` field.
 
 ## _Ad Hoc_ Properties
 
@@ -206,19 +210,19 @@ Information about primary source material in the corpus is maintained along the 
 
 `publication` manifests have the following properties:
 
-#### date (required)
+#### `date` (required)
 
 See the [Global `date` property](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.0.md#date).
 
-#### language (optional)
+#### `language` (optional)
 
 A string value taken from the the [ISO 639-2 list](http://www.loc.gov/standards/iso639-2/php/code_list.php) language codes. If multiple languages are required, a list of string of strings can be supplied.
 
-#### country (optional)
+#### `country` (optional)
 
 A string value taken from the [ISO 3166-1 ALPHA-2](https://en.wikipedia.org/wiki/ISO_3166-1) country codes.
 
-#### authors (optional)
+#### `authors` (optional)
 
 A list value. Some publications (e.g. monographs) may have authors; otherwise, this information is best supplied in the records of individual newspaper articles and the like.
 
@@ -242,23 +246,23 @@ The `Corpus` node serves as a data store for all primary and generated data hous
 
 `collection` manifests have the following properties:
 
-#### collectors (required)
+#### `collectors` (required)
 
 A list containing the names of the WE1S staff who collected the data or creted the collection. Currently, the schema does not specify a format for names.
 
-#### date (required)
+#### `date` (required)
 
 See the [Global `date` property](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.0.md#date).
 
-#### workstation (optional)
+#### `workstation` (optional)
 
 A string value providing information about the environment in which the data was collected.
 
-#### queryTerms (optional)
+#### `queryTerms` (optional)
 
 A list providing keywords used to define the scope of the collection. The value can be used to query the `Corpus` for data matching a particular description.
 
-#### processes (optional)
+#### `processes` (optional)
 
 A list containing embedded processes or paths to separate process manifests. Both types follow the same schema, described under [`Processes`](#processes).
 
@@ -313,15 +317,15 @@ RawData manifests are path nodes for documents containing the primary data colle
 
 `RawData` manifests have the following optional properties. The values of `relationships`, `OCR`, and `rights` are inherited by all data along the path `,Corpus,New_York_Times,RawData,`.
 
-#### Relationships
+#### `relationships`
 
 A list of strings or objects. The schema above uses the `relationships` property to describe the data as being a part of another collection ("CollectionA") combined with material from a third collection ("CollectionB"). Terms from Dublin Core are used in the example above, but it is possible to use other terms from any controlled vocabulary.
 
-#### OCR (optional)
+#### `OCR` (optional)
 
 A boolean to indicate whether the data has been digitized using Optical Character Recognition. If omitted, the default value is `false`.
 
-#### rights (optional)
+#### `rights` (optional)
 
 A text string statement of licensing rights or intellectual property restrictions. `Free culture` is assumed by default.
 
@@ -344,15 +348,15 @@ Data documents along a Data node path contain the binary or plain text content o
 
 Data manifests have the following optional properties.
 
-#### authors (optional)
+#### `authors` (optional)
 
 A list of names. For items like newspaper articles, the author(s) can be supplied for each article.
 
-#### mimetype (optional)
+#### `mimeType` (optional)
 
 The `mimeType` property indicates the original file format. A list of common media formats can be found at [http://en.wikipedia.org/wiki/Internet_media_type# List_of_common_media_types](http://en.wikipedia.org/wiki/Internet_media_type#List_of_common_media_types).
 
-#### documentType (optional)
+#### `documentType` (optional)
 
 A string value. `documentType` is added (tentatively) to the schema in case the content of individual documents (as opposed to publications or collections) needs a controlled vocabulary.
 
@@ -451,19 +455,19 @@ In the example above, the `description` field for each step stands in for the en
 
 `Processes` manifests have the following properties.
 
-#### editors (required)
+#### `editors` (required)
 
 A list of WE1S staff members who were responsible for implementing the processes.
 
-#### steps (required)
+#### `steps` (required)
 
 A list of JSON objects providing each step in the process. See `Step Manifests`. Since processing steps are sequential, they need to be given an sequencing number using the `seq` keyword, as in the example above. Alternatively, a step may provide a `reference` to a "package" (that is, a re-usable process that is not specific to a single data set).
 
-#### date (required)
+#### `date` (required)
 
 See the [Global `date` property](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.0.md#date). The date here refers to the dates on which the process was implemented by WE1S staff.
 
-#### source (optional)
+#### `source` (optional)
 
 If the process is not embedded in the collection record, this property contains the record `_id` or `path` to the input data. The `path` property is better since it will contain the collection. Otherwise, the collection should be mentioned in the description or an optional `collection` keyword can be added to reference it.
 
@@ -495,27 +499,27 @@ In the above example, `_id` and `_path` would be required if the record were an 
 
 `step` manifests have the following properties:
 
-#### reference (optional)
+#### `reference` (optional)
 
 A string containing a reference to the tool or script. If it is a tool, this can be a URL to the tool's website. If the step involves a script, the reference should be a path to the script's record, which will contain the script's version number. The `reference` field can also be used to identify a path to a package (independent reusable process) that is a step in the process.
 
-#### label (optional)
+#### `label` (optional)
 
 A string containing a keyword for the name of the tool or script (useful for external resources).
 
-#### version (optional)
+#### `version` (optional)
 
 A string containing a keyword for the version of the tool or script. This is useful for external resources. WE1S scripts will have the version number embedded in their own manifests.
 
-#### options (optional)
+#### `options` (optional)
 
 A list containing information about the configuration of the tool or script used in the step. The option name should be given as the "argument" and the "value" should be the option setting. This structure is ideally suited for command-line tools, but the JSON object can contain fields like `{"settings.cfg": "Sample config file:..."}` to record a sample configuration file. Likewise, you might have `{"api": "http://api.nytimes.com/svc/search/v2/articlesearch"}` for an API query with further arguments for the query terms.
 
-#### output (optional)
+#### `output` (optional)
 
 A list of paths to the root node where all the script's outputs are stored.
 
-#### instructions (optional)
+#### `instructions` (optional)
 
 A string containing instructions for implementing the process. Although instructions can be put in the `notes` and `description` fields, an explicit `instructions` field is perhaps helpful, especially for packages.
 
@@ -1292,6 +1296,14 @@ The following is an incomplete alphabetical listing of the WE1S schema. It is a 
 
 **Related:**
 `Collection`, `Processes`
+
+### `refLocation`
+
+**Description:** A string value referring to an external location from which the document or data can be accessed. This will typically be a URL but may be a reference to a local file path.
+
+**Type:** String
+
+**Scope:** Global
 
 ### `startDate`
 
