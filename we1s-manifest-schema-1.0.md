@@ -360,6 +360,8 @@ The `mimeType` property indicates the original file format. A list of common med
 
 A string value. `documentType` is added (tentatively) to the schema in case the content of individual documents (as opposed to publications or collections) needs a controlled vocabulary.
 
+*Question: Should the data type be changed to array to allow for multiple "facets"? Also, should an equivalent of the `documentType` property be available at the `Collection` level so that the controlled vocabulary can be inherited?*
+
 ## ProcessedData
 
 ProcessedData manifests are path nodes for documents containing data transformed by WE1S non-analytic processes (e.g. text scrubbing). They should have the path value `,Corpus,collection_id,ProcessedData,`. Along this path will be found individual data documents. A `ProcessedData` node may have some additional metadata shown in the schema below:
@@ -877,6 +879,18 @@ The following is an incomplete alphabetical listing of the WE1S schema. It is a 
 
 **Related:**
 `Publications`
+
+#### `documentType`
+
+**Description:** A string value. `documentType` is added (tentatively) to the schema in case the content of individual documents (as opposed to publications or collections) needs a controlled vocabulary.
+
+**Type:** String
+
+**Scope:** `RawData`
+
+**Comments:** Should the data type be changed to array to allow for multiple "facets"? Also, should an equivalent of the `documentType` property be available at the `Collection` level so that the controlled vocabulary can be inherited?*
+
+**Related:** `RawData`
 
 ### `edition`
 
