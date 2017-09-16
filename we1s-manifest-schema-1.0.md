@@ -52,17 +52,17 @@ For multiple properties, it may be useful to construct a more elaborate structur
 
 ```javascript
 {"keyword": [
-              {"seq": 1 },
-              {"keyword": "value"}
-            ],
+    {"seq": 1},
+    {"keyword": "value"}
+  ],
  "keyword": [
-              {"seq": 2 },
-              {"keyword": "value"}
-            ]
+    {"seq": 2},
+    {"keyword": "value"}
+  ]
 }
 ```
 
-This documentation provides project-specific recommendations for the how to encode types of information that requires sequence. 
+This documentation provides project-specific recommendations for the how to encode types of information that requires sequence.
 
 ## WE1S Manifests
 
@@ -107,6 +107,30 @@ The `path` property implements MongoDB's ["materialized path"](https://docs.mong
 
 Global properties are properties that can occur in any type of manifest. For this reason, they are not listed amongst the options for specific manifest types unless they are required by that manifest type.
 
+### date
+
+A list of strings or objects containing date values. Dates should be given in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date (`YYYY-MM-DD`) or datetime (e.g. `2017-09-16T12:49:05Z`) format, wherever sufficient information is known. Dates may contain multiple date values or date ranges indicated by the `start` and `end` properties. Here are some examples:
+
+```json
+"date": ["2013-01-01"]
+
+"date": ["2013-01-01", "2013-12-31"]
+
+"date": [
+  {"start": "2013-01-01"},
+  {"end": "2013-12-31"}
+]
+```
+
+In some instances, it may be necessary to distinguish imprecise date values from more precise ones. This is accomplished by placing the list of dates inside objects with the  `normal` and `precise` properties, as in the example below:
+
+```json
+"date": [
+  {"normal": ["2017-09-16"]},
+  {"precise": ["2017-09-16T12:49:05Z"]}
+]
+```
+
 ### title
 
 This is an optional string value providing a "pretty" title for the manifest. Since `_id` values are used to construct paths, they may not take a form that can be used in this manner, and the `title` property fills this gap.See also the `label` field.
@@ -139,7 +163,7 @@ A list of text strings that can contain an extended prose commentary about the r
 In some cases, it may be necessary to designate group responsibility for authorship, processing steps, and the like. In these cases the keyword `group` can be used. For example:
 
 ```javascript
-{"editors": [ {"group": "UCSB"} ]}
+{"editors": [{"group": "UCSB"}]}
 ```
 
 ## _Ad Hoc_ Properties
@@ -184,7 +208,7 @@ Information about primary source material in the corpus is maintained along the 
 
 #### date (required)
 
-A list containing a string value (e.g. `"date": ["2013"]`) or two objects containing `start` and `end` values, as shown in the example.
+See the [Global `date` property](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.0.md#date).
 
 #### language (optional)
 
@@ -224,9 +248,7 @@ A list containing the names of the WE1S staff who collected the data or creted t
 
 #### date (required)
 
-A list containing a string value (e.g. `"date": ["2013"]`) or two objects containing `start` and `end` values, as shown in the example. The date here refers to the dates on which the data was collected by WE1S staff.
-
-*Question: Fields which take multiple values in lists are here representing as requiring a list, rather than a string, even if there is only a single value. Is there any reason not to do this?*
+See the [Global `date` property](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.0.md#date).
 
 #### workstation (optional)
 
@@ -439,7 +461,7 @@ A list of JSON objects providing each step in the process. See `Step Manifests`.
 
 #### date (required)
 
-A list containing a string value (e.g. `"date": ["2013"]`) or two objects containing `start` and `end` values, as shown in the example. The date here refers to the dates on which the process was implemented by WE1S staff.
+See the [Global `date` property](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.0.md#date). The date here refers to the dates on which the process was implemented by WE1S staff.
 
 #### source (optional)
 
@@ -550,6 +572,7 @@ The following is an incomplete alphabetical listing of the WE1S schema. It is a 
 **Scope:** Global (required)
 
 **Example:**
+
 ```json
 {
     "_id": "new_york_times"
@@ -562,6 +585,7 @@ The following is an incomplete alphabetical listing of the WE1S schema. It is a 
 * Although it is often desirable to have unique `_id` values, this is not required since the `_id` value is appended to the manifest's `path`. This allows for multiple manifests with the same `_id` to exist along different paths.
 
 **Related:**
+
 `path`
 
 ### `altTitle`
@@ -820,12 +844,12 @@ The following is an incomplete alphabetical listing of the WE1S schema. It is a 
 
 **Comments:**
 
-* Dates should be given in `DATETIME` format `YYYY-MM-DD` wherever this information is known.
+* Dates should be given in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date (`YYYY-MM-DD`) or datetime (e.g. `2017-09-16T12:49:05Z`) format, wherever sufficient information is known.
 * Multiple dates can be listed as the value of `date`.
 * Date ranges can be given as the value of `date` by supplying an object with `startDate` and `endDate` properties.
 
 **Related:**
-`endDate`, `startDate`
+`endDate`, `normal`, `precise`, `startDate`
 
 ### `description`
 
@@ -986,6 +1010,29 @@ The following is an incomplete alphabetical listing of the WE1S schema. It is a 
 
 **Related:**
 
+### `normal`
+
+**Description:** In some instances, it may be necessary to distinguish imprecise date values from more precise ones. This is accomplished by placing the list of dates inside objects with the  `normal` and `precise` properties.
+
+**Type:** List
+
+**Scope:** `date`
+
+**Example:**
+
+```json
+"date": [
+  {"normal": ["2017-09-16"]},
+  {"precise": ["2017-09-16T12:49:05Z"]}
+]
+```
+
+**Comments:**
+
+**Related:**
+
+`date`, `end`, `precise`, `start`
+
 ### `note`
 
 **Description:** An individual note supplied by the creator or editor of the manifest.
@@ -1063,6 +1110,29 @@ The following is an incomplete alphabetical listing of the WE1S schema. It is a 
 
 **Related:**
 `_id`
+
+### `precise`
+
+**Description:** In some instances, it may be necessary to distinguish imprecise date values from more precise ones. This is accomplished by placing the list of dates inside objects with the  `normal` and `precise` properties.
+
+**Type:** List
+
+**Scope:** `date`
+
+**Example:**
+
+```json
+"date": [
+  {"normal": ["2017-09-16"]},
+  {"precise": ["2017-09-16T12:49:05Z"]}
+]
+```
+
+**Comments:**
+
+**Related:**
+
+`date`, `end`, `normal`, `start`
 
 ### `processes`
 
