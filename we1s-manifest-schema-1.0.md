@@ -14,6 +14,7 @@ _Last Update: September 16, 2017_
 * [Root-Level Manifests](#root-level-manifests)
 * [Publications](#publications)
 * [Corpus and Collection Nodes](#corpus-and-collection-nodes)
+* [Dataset Nodes](#dataset-nodes)
 * [Data Nodes](#data-nodes)
 * [RawData](#rawdata)
 * [ProcessedData](#processeddata)
@@ -283,6 +284,10 @@ Here is an example of a `collection` manifest which combines materials from two 
   *"date": [{"start": "2013-01-01"}, {"end": "2013-01-01"}]
 }
 ```
+
+## Dataset Nodes
+
+The standard dataset type in the WE1S project is a collection of text documents (or their derivatives) contained in a `collection`. However, it is possible to describe other types of data using the manifest schema. For these types of data sets, a Dataset manifest can be used. Dataset manifests have all the same properties as `collection` manifests but their paths are not relative to the `Corpus` node.
 
 ## Data Nodes
 
