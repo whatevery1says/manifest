@@ -2,7 +2,7 @@
 
 # DRAFT
 
-`Project` manifests consist of metadata and resource information.
+`Project` manifests consist of metadata and resource information. The schema requirements are based on the [Frictionless Data](http://frictionlessdata.io/) specification for data packages and should be largely compatible with it.
 
 ## Metadata
 
