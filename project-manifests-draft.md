@@ -12,9 +12,14 @@ A short url-usable (and preferably human-readable) name of the project. This mus
 
 The name should be invariant, meaning that it should not change when a project is updated. Version distinction should be left to the version property. As a corollary, the name also should not include an indication of time range covered.
 
+_Note: the Frictionless Data `name` property corresponds most closely to the `_id` property in the WE1S schema. WE1S should possibly use `_id` instead. However, some of the formatting requirements specified in Frictionless Data may be worth adopting for the WE1S `_id` property generally._
+
 ### `id` (optional)
 
 A property reserved for globally unique identifiers. Examples of identifiers that are unique include UUIDs and DOIs.
+
+_Note: the Frictionless Data `id` property is easily confused with the WE1S `_id` property. Perhaps it should be renamed `identifier` or something like that._
+
 
 ### `licenses` (optional)
 
