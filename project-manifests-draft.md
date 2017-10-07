@@ -100,3 +100,21 @@ A title or label for the resource.
 `description` (optional)
 
 A prose description of the resource.
+
+## Discussion
+
+A minimal Project manifest will look like this:
+
+```json
+"id": "project_name",
+"contributors": [{
+  "title": "Mickey Mouse"
+}],
+"created": "2017-10-06",
+"resources": [{
+  "name": "collection_id",
+  "path": "path_to_collection_manifest"
+}]
+```
+
+The properties `title`, `name`, and `path` are all borrowed from Frictionless Data and may be a little confusing in the context of the WE1S schema. Perhaps they should be changed?
