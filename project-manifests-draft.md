@@ -32,9 +32,9 @@ Here is an example:
 
 ```json
 "licenses": [{
-	"name": "ODC-PDDL-1.0",
-	"path": "http://opendatacommons.org/licenses/pddl/",
-	"title": "Open Data Commons Public Domain Dedication and License v1.0"
+  "name": "ODC-PDDL-1.0",
+  "path": "http://opendatacommons.org/licenses/pddl/",
+  "title": "Open Data Commons Public Domain Dedication and License v1.0"
 }]
 ```
 
@@ -60,10 +60,10 @@ An array containing the people or organizations who contributed to this project.
 
 ```json
 contributors: [{
-	"title": "Joe Bloggs",
-	"email": "joe@bloggs.com",
-	"path": "http://www.bloggs.com",
-	"role": "author"
+  "title": "Joe Bloggs",
+  "email": "joe@bloggs.com",
+  "path": "http://www.bloggs.com",
+  "role": "author"
 }]
 ```
 
