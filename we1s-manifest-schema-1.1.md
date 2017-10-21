@@ -1,7 +1,7 @@
 # WhatEvery1Says Schema
 
 **v1.1**
-_Last Update: September 16, 2017_
+_Last Update: October 20, 2017_
 
 ## Contents
 
@@ -14,13 +14,13 @@ _Last Update: September 16, 2017_
 * [Root-Level Manifests](#root-level-manifests)
 * [Publications](#publications)
 * [Corpus and Collection Nodes](#corpus-and-collection-nodes)
-* [Dataset Nodes](#dataset-nodes)
 * [Data Nodes](#data-nodes)
 * [RawData](#rawdata)
 * [ProcessedData](#processeddata)
 * [Metadata](#metadata)
 * [Outputs](#outputs)
 * [Related](#related)
+* [Datasets and Datapackages](#datasets-and-datapackages)
 * [Processes](#processes)
 * [Step Manifests](#step-manifests)
 * [Scripts](#scripts)
@@ -285,10 +285,6 @@ Here is an example of a `collection` manifest which combines materials from two 
 }
 ```
 
-## Dataset Nodes
-
-The standard dataset type in the WE1S project is a collection of text documents (or their derivatives) contained in a `collection`. However, it is possible to describe other types of data using the manifest schema. For these types of data sets, a Dataset manifest can be used. Dataset manifests have all the same properties as `collection` manifests but their paths are not relative to the `Corpus` node.
-
 ## Data Nodes
 
 Collection data is stored along different branches of the `collection` node, depending on the type of data. The WE1S schema requires the use of standard node `_id` values for each of the data types:
@@ -429,6 +425,47 @@ Outputs nodes and/or records are similar to `RawData` manifests in allowing an o
 ```
 
 `Related` nodes and/or manifests are similar to `RawData` manifests in allowing a `mimeType` field.
+
+## Datasets and Datapackages
+
+The standard dataset type in the WE1S project is a collection of text documents (or their derivatives) contained in a collection. However, it is possible to describe other types of data using the manifest schema. A simple method modelled on the `collection` manifest can be found in the example below:
+
+```json
+{
+  "_id": "A human-readable/url-usable identifier based on the WE1S _id description.",
+  "path": "A url, local path, or material path to the container folder or parent node.",
+  "description": "A prose description of the dataset.",
+  "collectors": ["A list of people responsible for collecting the data"],
+  "date": [{"start": "2013-01-01"}, {"end": "2013-01-01"}]
+}
+```
+
+The manifest system can also describe a containerised dataset called a datapackage, which stores data in a way that facilitates delivery, management, and interoperability of data. Currently, the WE1S schema supports the [Frictionless Data specification](https://specs.frictionlessdata.io/data-package/) for datapackages. The format requires a simple JSON file like a manifest, but the file must be named `datapackage.json`. Frictionless Data datapackages can contain rich sets of meta data, but only ten properties are required for compatibility with the WE1S schema. These are illustrated in the `datapackage.json` file below:
+
+```json
+{
+  "_id": "A human-readable/url-usable identifier based on the WE1S _id description",
+  "name": "The same value as that of the _id property",
+  "title": "A nice title",
+  "profile": "https://specs.frictionlessdata.io/schemas/data-package.json",
+  "datapackage_version": "1.0.0-rc.2",
+  "path": "A url, local path, or material path to the datapackage.json manifest",
+  "description": "A prose description of the datapackage.",
+  "contributors": ["A list of contributors to the datapackage."],
+  "created": "The datetime at which this datapackage was created.",
+  "resources" ["A list of resources belonging to the datapackage."]
+}
+```
+
+**Notes:**
+
+* All the properties listed above are **required** by the WE1S schema. They constitute a minimal Frictionless Data datapackage plus some extra WE1S informtion.
+* The WE1S `_id` property is effectively the same as the Frictionless Data `name` property. Duplicating the value is a small price to pay for storing a manifest that does not need to be crosswalked from one spec to the other. **Note: There is currently a small incompatibility in that the Frictionless Data `name` spec has stricter formatting requirements than the WE1S `_id` spec.**
+* `profile` is identifies the manifest as a Frictionless Data datapackage by pointing to the datapackage JSON schema. To allow for possible conflicts with future developments, WE1S requires the additional `datapackage_version` property.
+* The value of the `description` property will typically be duplicated in a `README.md` file if the datapackage is stored on GitHub.
+* Datapackages can be stored anywhere, not just in the WE1S database, so the `path` property points directly to the `datpackage.json` manifest.
+* Datapackage authorship and creation are handled by the `contributors` and `created` properties. See the [Frictionless Data specs](https://specs.frictionlessdata.io/data-package/) for usage.
+* Datapackage resources may be assets or the data objects themselves. The `resources` property maintains an array of links to these resources. _These links may be relative to the `datpackage.json` manifest._ For further information, see the [Frictionless Data data resource specification](https://specs.frictionlessdata.io/data-resource/).
 
 ## Processes
 
