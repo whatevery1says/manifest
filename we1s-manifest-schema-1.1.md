@@ -453,7 +453,7 @@ The manifest system can also describe a containerised dataset called a datapacka
   "description": "A prose description of the datapackage.",
   "contributors": ["A list of contributors to the datapackage."],
   "created": "The datetime at which this datapackage was created.",
-  "resources" ["A list of resources belonging to the datapackage."]
+  "resources": ["A list of resources belonging to the datapackage."]
 }
 ```
 
