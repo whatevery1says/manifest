@@ -25,7 +25,6 @@ The JSL Python code will output a manifest in string format. There is no built-i
 1. Property keywords are prefixed with `__main__.`.
 1. JSL does not have a `date` format (only `datetime`). As a workaround, the schema is given a placeholder, and the helper function converts the placeholder to valid JSON schema.
 1. JSL generates boolean values in lower case, which is valid JSON but does not appear to be parsed correctly in by the `jsonschema` library. As a workaround, the helper function capitalises them.
-1. By default, the `additional_properties` keyword is set the `False`, and I have not yet figured out how to modify this. If there are custom metadata properties, this value should manually be set to `True` in the generated manifest.
 
 ## Validating Data against a Manifest
 

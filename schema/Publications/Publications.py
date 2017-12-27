@@ -2,6 +2,9 @@ import jsl, json
 
 # Publications Object
 class Publications(jsl.Document):
+
+    class Options(object):
+        additional_properties = True            
     
     # Global Properties
     class _id(jsl.Document):
@@ -111,5 +114,3 @@ def get_manifest(schema):
 schema = Publications.get_schema(ordered=True)
 manifest = get_manifest(schema)
 print(manifest)
-
-# Important: By default, additional_properties is set to False. If there are custom metadata, it should be set to true. 
