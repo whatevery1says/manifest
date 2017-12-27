@@ -88,8 +88,8 @@ class Publications(jsl.Document):
     refLocation = jsl.DocumentField(refLocation, as_ref=True)
     edition = jsl.StringField()
     contentType = jsl.StringField()
-    language = jsl.StringField()
-    country = jsl.StringField()
+    language = jsl.StringField() # Need to handle language codes
+    country = jsl.StringField() # Need to handle country codes
     authors = jsl.ArrayField()
     notes = jsl.DocumentField(notes, as_ref=True)
 
@@ -101,11 +101,10 @@ def get_manifest(schema):
     # jsonschema validator does not accept lower case booleans
     # This needs to be improved so there are no false positives
     manifest = manifest.replace(': false', ': False')
-    # Workaround becuase JSL cannot generate date formats, only datetime
+    # Workaround because JSL cannot generate date formats, only datetime
     manifest = manifest.replace('"pattern": "DATEFORMAT"', '"format": "date"')
     return manifest
     
 schema = Publications.get_schema(ordered=True)
 manifest = get_manifest(schema)
 print(manifest)
-
