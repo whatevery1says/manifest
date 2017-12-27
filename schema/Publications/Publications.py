@@ -107,6 +107,7 @@ def get_manifest(schema):
     # jsonschema validator does not accept lower case booleans
     # This needs to be improved so there are no false positives
     manifest = manifest.replace(': false', ': False')
+    manifest = manifest.replace(': true', ': True')
     # Workaround because JSL cannot generate date formats, only datetime
     manifest = manifest.replace('"pattern": "DATEFORMAT"', '"format": "date"')
     return manifest
