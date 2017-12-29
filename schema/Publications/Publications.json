@@ -7,44 +7,34 @@
             "additionalProperties": False
         },
         "altTitle": {
-            "type": "object",
-            "properties": {
-                "altTitle": {
-                    "type": "string"
-                }
-            },
+            "type": "string",
             "additionalProperties": False
         },
         "date": {
-            "type": "object",
-            "properties": {
-                "date": {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "type": "string",
-                                "pattern": "DATEFORMAT"
-                            },
-                            {
-                                "type": "string",
-                                "format": "date-time"
-                            },
-                            {
-                                "$ref": "#/definitions/daterange"
-                            },
-                            {
-                                "$ref": "#/definitions/precisedaterange"
-                            },
-                            {
-                                "$ref": "#/definitions/normal"
-                            },
-                            {
-                                "$ref": "#/definitions/precise"
-                            }
-                        ]
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "type": "string",
+                        "pattern": "DATEFORMAT"
+                    },
+                    {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "$ref": "#/definitions/daterange"
+                    },
+                    {
+                        "$ref": "#/definitions/precisedaterange"
+                    },
+                    {
+                        "$ref": "#/definitions/normal"
+                    },
+                    {
+                        "$ref": "#/definitions/precise"
                     }
-                }
+                ]
             },
             "required": [
                 "date"
@@ -70,86 +60,51 @@
             "additionalProperties": False
         },
         "description": {
-            "type": "object",
-            "properties": {
-                "description": {
-                    "type": "string"
-                }
-            },
+            "type": "string",
             "additionalProperties": False
         },
         "group": {
-            "type": "object",
-            "properties": {
-                "group": {
-                    "type": "string"
-                }
-            },
+            "type": "string",
             "additionalProperties": False
         },
         "label": {
-            "type": "object",
-            "properties": {
-                "label": {
-                    "type": "string"
-                }
-            },
+            "type": "string",
             "additionalProperties": False
         },
         "namespace": {
-            "type": "object",
-            "properties": {
-                "namespace": {
-                    "type": "string",
-                    "default": "we1sv1.1"
-                }
-            },
+            "type": "string",
+            "default": "we1sv1.1",
             "required": [
                 "namespace"
             ],
             "additionalProperties": False
         },
         "normal": {
-            "type": "object",
-            "properties": {
-                "normal": {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "type": "string",
-                                "pattern": "DATEFORMAT"
-                            },
-                            {
-                                "$ref": "#/definitions/daterange"
-                            }
-                        ]
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "type": "string",
+                        "pattern": "DATEFORMAT"
+                    },
+                    {
+                        "$ref": "#/definitions/daterange"
                     }
-                }
+                ]
             },
-            "required": [
-                "normal"
-            ],
-            "additionalProperties": False
+        "required": [
+            "normal"
+        ],
+        "additionalProperties": False
         },
         "note": {
-            "type": "object",
-            "properties": {
-                "note": {
-                    "type": "string"
-                }
-            },
+            "type": "string",
             "additionalProperties": False
         },
         "notes": {
-            "type": "object",
-            "properties": {
-                "notes": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/note"
-                    }
-                }
+            "type": "array",
+            "items": {
+                "$ref": "#/definitions/note"
             },
             "required": [
                 "notes"
@@ -157,35 +112,25 @@
             "additionalProperties": False
         },
         "path": {
-            "type": "object",
-            "properties": {
-                "path": {
-                    "type": "string",
-                    "pattern": "^,[a-zA-Z-_,]+,$"
-                }
-            },
+            "type": "string",
+            "pattern": "^,[a-zA-Z-_,]+,$",
             "required": [
                 "path"
             ],
             "additionalProperties": False
         },
         "precise": {
-            "type": "object",
-            "properties": {
-                "precise": {
-                    "type": "array",
-                    "items": {
-                        "oneOf": [
-                            {
-                                "type": "string",
-                                "format": "date-time"
-                            },
-                            {
-                                "$ref": "#/definitions/precisedaterange"
-                            }
-                        ]
+            "type": "array",
+            "items": {
+                "oneOf": [
+                    {
+                        "type": "string",
+                        "format": "date-time"
+                    },
+                    {
+                        "$ref": "#/definitions/precisedaterange"
                     }
-                }
+                ]
             },
             "required": [
                 "precise"
@@ -211,21 +156,11 @@
             "additionalProperties": False
         },
         "refLocation": {
-            "type": "object",
-            "properties": {
-                "refLocation": {
-                    "type": "string"
-                }
-            },
+            "type": "string",
             "additionalProperties": False
         },
         "title": {
-            "type": "object",
-            "properties": {
-                "title": {
-                    "type": "string"
-                }
-            },
+            "type": "string",
             "additionalProperties": False
         }
     },
