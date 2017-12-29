@@ -1,5 +1,7 @@
 # Schema Validation Files
 
+<h3 style="color:red;">Warning! These materials are not quite ready for production.</h3>
+
 This folder contains a collection of documents for validating manifests against the WhatEvery1Says manifest schema. The documents are all generated using the [Python `JSL` library](http://jsl.readthedocs.io/en/latest/index.html). If the manifests need to be modified, the Python files should be used and the JSON re-generated in order to ensure consistency.
 
 In Python applications, data can be validated against the JSON schema files using the [`jsonschema` validation library](http://python-jsonschema.readthedocs.io/en/latest/#).
