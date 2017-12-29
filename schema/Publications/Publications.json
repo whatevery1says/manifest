@@ -1,7 +1,7 @@
 {
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
-        "__main__._id": {
+        "_id": {
             "type": "object",
             "properties": {
                 "_id": {
@@ -14,7 +14,7 @@
             ],
             "additionalProperties": False
         },
-        "__main__.altTitle": {
+        "altTitle": {
             "type": "object",
             "properties": {
                 "altTitle": {
@@ -23,7 +23,7 @@
             },
             "additionalProperties": False
         },
-        "__main__.date": {
+        "date": {
             "type": "object",
             "properties": {
                 "date": {
@@ -39,16 +39,16 @@
                                 "format": "date-time"
                             },
                             {
-                                "$ref": "#/definitions/__main__.daterange"
+                                "$ref": "#/definitions/daterange"
                             },
                             {
-                                "$ref": "#/definitions/__main__.precisedaterange"
+                                "$ref": "#/definitions/precisedaterange"
                             },
                             {
-                                "$ref": "#/definitions/__main__.normal"
+                                "$ref": "#/definitions/normal"
                             },
                             {
-                                "$ref": "#/definitions/__main__.precise"
+                                "$ref": "#/definitions/precise"
                             }
                         ]
                     }
@@ -59,7 +59,7 @@
             ],
             "additionalProperties": False
         },
-        "__main__.daterange": {
+        "daterange": {
             "type": "object",
             "properties": {
                 "start": {
@@ -77,7 +77,7 @@
             ],
             "additionalProperties": False
         },
-        "__main__.description": {
+        "description": {
             "type": "object",
             "properties": {
                 "description": {
@@ -86,7 +86,7 @@
             },
             "additionalProperties": False
         },
-        "__main__.group": {
+        "group": {
             "type": "object",
             "properties": {
                 "group": {
@@ -95,7 +95,7 @@
             },
             "additionalProperties": False
         },
-        "__main__.label": {
+        "label": {
             "type": "object",
             "properties": {
                 "label": {
@@ -104,7 +104,7 @@
             },
             "additionalProperties": False
         },
-        "__main__.namespace": {
+        "namespace": {
             "type": "object",
             "properties": {
                 "namespace": {
@@ -117,7 +117,7 @@
             ],
             "additionalProperties": False
         },
-        "__main__.normal": {
+        "normal": {
             "type": "object",
             "properties": {
                 "normal": {
@@ -129,7 +129,7 @@
                                 "pattern": "DATEFORMAT"
                             },
                             {
-                                "$ref": "#/definitions/__main__.daterange"
+                                "$ref": "#/definitions/daterange"
                             }
                         ]
                     }
@@ -140,7 +140,7 @@
             ],
             "additionalProperties": False
         },
-        "__main__.note": {
+        "note": {
             "type": "object",
             "properties": {
                 "note": {
@@ -149,13 +149,13 @@
             },
             "additionalProperties": False
         },
-        "__main__.notes": {
+        "notes": {
             "type": "object",
             "properties": {
                 "notes": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/__main__.note"
+                        "$ref": "#/definitions/note"
                     }
                 }
             },
@@ -164,7 +164,7 @@
             ],
             "additionalProperties": False
         },
-        "__main__.path": {
+        "path": {
             "type": "object",
             "properties": {
                 "path": {
@@ -177,7 +177,7 @@
             ],
             "additionalProperties": False
         },
-        "__main__.precise": {
+        "precise": {
             "type": "object",
             "properties": {
                 "precise": {
@@ -189,7 +189,7 @@
                                 "format": "date-time"
                             },
                             {
-                                "$ref": "#/definitions/__main__.precisedaterange"
+                                "$ref": "#/definitions/precisedaterange"
                             }
                         ]
                     }
@@ -200,7 +200,7 @@
             ],
             "additionalProperties": False
         },
-        "__main__.precisedaterange": {
+        "precisedaterange": {
             "type": "object",
             "properties": {
                 "start": {
@@ -218,7 +218,7 @@
             ],
             "additionalProperties": False
         },
-        "__main__.refLocation": {
+        "refLocation": {
             "type": "object",
             "properties": {
                 "refLocation": {
@@ -227,7 +227,7 @@
             },
             "additionalProperties": False
         },
-        "__main__.title": {
+        "title": {
             "type": "object",
             "properties": {
                 "title": {
@@ -240,37 +240,37 @@
     "type": "object",
     "properties": {
         "_id": {
-            "$ref": "#/definitions/__main__._id"
+            "$ref": "#/definitions/_id"
         },
         "namespace": {
-            "$ref": "#/definitions/__main__.namespace"
+            "$ref": "#/definitions/namespace"
         },
         "path": {
-            "$ref": "#/definitions/__main__.path"
+            "$ref": "#/definitions/path"
         },
         "description": {
-            "$ref": "#/definitions/__main__.description"
+            "$ref": "#/definitions/description"
         },
         "notes": {
-            "$ref": "#/definitions/__main__.notes"
+            "$ref": "#/definitions/notes"
         },
         "date": {
-            "$ref": "#/definitions/__main__.date"
+            "$ref": "#/definitions/date"
         },
         "group": {
-            "$ref": "#/definitions/__main__.group"
+            "$ref": "#/definitions/group"
         },
         "label": {
-            "$ref": "#/definitions/__main__.label"
+            "$ref": "#/definitions/label"
         },
         "title": {
-            "$ref": "#/definitions/__main__.title"
+            "$ref": "#/definitions/title"
         },
         "altTitle": {
-            "$ref": "#/definitions/__main__.altTitle"
+            "$ref": "#/definitions/altTitle"
         },
         "refLocation": {
-            "$ref": "#/definitions/__main__.refLocation"
+            "$ref": "#/definitions/refLocation"
         },
         "authors": {
             "type": "array"
