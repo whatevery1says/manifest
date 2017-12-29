@@ -265,15 +265,6 @@
         },
         "refLocation": {
             "$ref": "#/definitions/refLocation"
-        },
-        "relationships": {
-            "type": "array"
-        },
-        "OCR": {
-            "type": "boolean"
-        },
-        "rights": {
-            "type": "string"
         }
     },
     "required": [

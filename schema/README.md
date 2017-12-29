@@ -77,7 +77,7 @@ Text links point to the schema documentation. Disk icons are links pointing dire
 - [ ] [`Outputs`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#outputs)
 - [ ] [`Related`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#related)
 - [x] [`Data Documents`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#data-documents) [:floppy_disk:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Data.json)
-- [ ] `Path Node` (Generic node for branching paths)
+- [x] `Path Node` (Generic node for branching paths)  [:floppy_disk:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/PathNode.json)
 - [ ] [`Processes`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#processes)
 - [ ] [`Step Manifests`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#step-manifests)
 - [ ] [`Scripts`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#scripts)

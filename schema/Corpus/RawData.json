@@ -270,7 +270,7 @@
             "type": "array"
         },
         "OCR": {
-            "type": "string"
+            "type": "boolean"
         },
         "rights": {
             "type": "string"
@@ -279,8 +279,7 @@
     "required": [
         "_id",
         "namespace",
-        "path",
-        "date"
+        "path"
     ],
     "additionalProperties": True
 }

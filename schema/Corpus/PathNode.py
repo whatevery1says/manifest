@@ -1,7 +1,7 @@
 import jsl, json
 
-# RawData Object
-class RawData(jsl.Document):
+# Generic Data Path Node
+class PathNode(jsl.Document):
     
     class Options(object):
         additional_properties = True
@@ -80,10 +80,6 @@ class RawData(jsl.Document):
     altTitle = jsl.DocumentField(altTitle, as_ref=True)
     refLocation = jsl.DocumentField(refLocation, as_ref=True)
     notes = jsl.DocumentField(notes, as_ref=True)
-
-    relationships = jsl.ArrayField()
-    OCR = jsl.BooleanField()
-    rights = jsl.StringField()
     
 def get_manifest(schema):
     # Convert ordered dict to json
@@ -98,6 +94,6 @@ def get_manifest(schema):
     manifest = manifest.replace('"pattern": "DATEFORMAT"', '"format": "date"')
     return manifest
     
-schema = RawData.get_schema(ordered=True)
+schema = PathNode.get_schema(ordered=True)
 manifest = get_manifest(schema)
 print(manifest)

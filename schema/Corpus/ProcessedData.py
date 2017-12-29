@@ -73,7 +73,7 @@ class ProcessedData(jsl.Document):
     namespace = jsl.DocumentField(namespace, as_ref=True, required=True)
     path = jsl.DocumentField(path, pattern='^,Corpus,[a-zA-Z-_,]+,$', required=True)
     description = jsl.DocumentField(description, as_ref=True)
-    date = jsl.DocumentField(date, as_ref=True, required=True)
+    date = jsl.DocumentField(date, as_ref=True)
     group = jsl.DocumentField(group, as_ref=True)
     label = jsl.DocumentField(label, as_ref=True)
     title = jsl.DocumentField(title, as_ref=True)
