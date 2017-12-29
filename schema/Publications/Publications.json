@@ -2,16 +2,8 @@
     "$schema": "http://json-schema.org/draft-04/schema#",
     "definitions": {
         "_id": {
-            "type": "object",
-            "properties": {
-                "_id": {
-                    "type": "string",
-                    "pattern": "[a-zA-Z-_]+"
-                }
-            },
-            "required": [
-                "_id"
-            ],
+            "type": "string",
+            "pattern": "[a-zA-Z-_]+",
             "additionalProperties": False
         },
         "altTitle": {
