@@ -60,4 +60,23 @@ validate(data, schema)
 
 If no exception is raised by `validate()`, the instance is valid.
 
-**Note:** `jsonschema` validation errors are often less informative than one would like. But at least you know that there is the data is invalid. If it is not clear what is wrong, it is worth checking whether the manifest is well-formed JSON using [jsonlint](https://jsonlint.com/). If this does not reveal the problem, then the manifest does not follow the WE1S manifest schema in some way.
+**Notes:**
+
+- Validation schemas can also be loaded programmatically directly from the repo on GitHub.
+- `jsonschema` validation errors are often less informative than one would like. But at least you know that there is the data is invalid. If it is not clear what is wrong, it is worth checking whether the manifest is well-formed JSON using [jsonlint](https://jsonlint.com/). If this does not reveal the problem, then the manifest does not follow the WE1S manifest schema in some way.
+
+## Currently Available Validation Schemas
+
+- [x] [Publications](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#publications) [download](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Publications/Publications.json)
+- [x] [collection](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#corpus-and-collection-nodes) [download](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/collection.json)
+- [x] [RawData](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#rawdata) [download](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/RawData.json)
+- [x] [ProcessedData](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#processeddata) [download](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/ProcessedData.json)
+- [ ] [Metadata](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#metadata)
+- [ ] [Outputs](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#outputs)
+- [ ] [Related](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#related)
+- [x] [Data Documents](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#data-documents) [download](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Data.json)
+- [ ] Path Node (Generic node for branching paths)
+- [ ] [Processes](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#processes)
+- [ ] [Step Manifests](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#step-manifests)
+- [ ] [Scripts](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#scripts)
+- [ ] [Project](https://github.com/whatevery1says/manifest/blob/master/project-manifests-draft.md)
