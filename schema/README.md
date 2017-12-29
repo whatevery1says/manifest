@@ -67,17 +67,17 @@ If no exception is raised by `validate()`, the instance is valid.
 
 ## Currently Available Validation Schemas
 
-Text links point to the schema documentation. Disk icons are links pointing directly to the JSON schema.
+Text links point to the schema documentation. Link icons point directly to the JSON schema.
 
-- [x] [`Publications`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#publications) [:floppy_disk:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Publications/Publications.json)
-- [x] [`collection`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#corpus-and-collection-nodes) [:floppy_disk:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/collection.json)
-- [x] [`RawData`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#rawdata) [:floppy_disk:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/RawData.json)
-- [x] [`ProcessedData`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#processeddata) [:floppy_disk:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/ProcessedData.json)
+- [x] [`Publications`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#publications) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Publications/Publications.json)
+- [x] [`collection`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#corpus-and-collection-nodes) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/collection.json)
+- [x] [`RawData`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#rawdata) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/RawData.json)
+- [x] [`ProcessedData`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#processeddata) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/ProcessedData.json)
 - [ ] [`Metadata`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#metadata)
 - [ ] [`Outputs`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#outputs)
 - [ ] [`Related`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#related)
-- [x] [`Data Documents`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#data-documents) [:floppy_disk:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Data.json)
-- [x] `Path Node` (Generic node for branching paths)  [:floppy_disk:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/PathNode.json)
+- [x] [`Data Documents`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#data-documents) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Data.json)
+- [x] `Path Node` (Generic node for branching paths)  [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/PathNode.json)
 - [ ] [`Processes`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#processes)
 - [ ] [`Step Manifests`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#step-manifests)
 - [ ] [`Scripts`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#scripts)
