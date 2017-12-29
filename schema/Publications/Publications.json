@@ -16,7 +16,7 @@
                 "oneOf": [
                     {
                         "type": "string",
-                        "pattern": "(\d+[-/]\d+[-/]\d+)"
+                        "format": "date"
                     },
                     {
                         "type": "string",
@@ -46,11 +46,11 @@
             "properties": {
                 "start": {
                     "type": "string",
-                    "pattern": "(\d+[-/]\d+[-/]\d+)"
+                    "format": "date"
                 },
                 "end": {
                     "type": "string",
-                    "pattern": "(\d+[-/]\d+[-/]\d+)"
+                    "format": "date"
                 }
             },
             "required": [
@@ -85,7 +85,7 @@
                 "oneOf": [
                     {
                         "type": "string",
-                        "pattern": "(\d+[-/]\d+[-/]\d+)"
+                        "format": "date"
                     },
                     {
                         "$ref": "#/definitions/daterange"
