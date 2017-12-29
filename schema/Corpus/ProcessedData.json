@@ -218,7 +218,7 @@
             "properties": {
                 "_id": {
                     "type": "string",
-                    "pattern": "[a-zA-Z-_]+"
+                    "pattern": "ProcessedData"
                 }
             },
             "required": [

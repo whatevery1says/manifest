@@ -8,7 +8,7 @@ class RawData(jsl.Document):
             
     # Global Properties
     class _id(jsl.Document):
-        _id = jsl.StringField(pattern='[a-zA-Z-_]+', required=True)
+        _id = jsl.StringField(pattern='RawData', required=True)
 
     class namespace(jsl.Document):
         namespace = jsl.StringField(default='we1sv1.1', required=True)
