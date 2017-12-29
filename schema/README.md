@@ -81,4 +81,4 @@ Text links point to the schema documentation. Download links point directly to t
 - [ ] [`Processes`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#processes)
 - [ ] [`Step Manifests`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#step-manifests)
 - [ ] [`Scripts`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#scripts)
-- [ ] [`Project`](https://github.com/whatevery1says/manifest/blob/master/project-manifests-draft.md)
+- [ ] [`Project`](https://github.com/whatevery1says/manifest/blob/master/project-manifests-draft.md) [:floppy_disk:](#)
