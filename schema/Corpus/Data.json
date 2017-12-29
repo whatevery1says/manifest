@@ -1,0 +1,290 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "definitions": {
+        "altTitle": {
+            "type": "object",
+            "properties": {
+                "altTitle": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": False
+        },
+        "date": {
+            "type": "object",
+            "properties": {
+                "date": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "date"
+                            },
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "$ref": "#/definitions/daterange"
+                            },
+                            {
+                                "$ref": "#/definitions/precisedaterange"
+                            },
+                            {
+                                "$ref": "#/definitions/normal"
+                            },
+                            {
+                                "$ref": "#/definitions/precise"
+                            }
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "date"
+            ],
+            "additionalProperties": False
+        },
+        "daterange": {
+            "type": "object",
+            "properties": {
+                "start": {
+                    "type": "string",
+                    "format": "date"
+                },
+                "end": {
+                    "type": "string",
+                    "format": "date"
+                }
+            },
+            "required": [
+                "start",
+                "end"
+            ],
+            "additionalProperties": False
+        },
+        "description": {
+            "type": "object",
+            "properties": {
+                "description": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": False
+        },
+        "group": {
+            "type": "object",
+            "properties": {
+                "group": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": False
+        },
+        "label": {
+            "type": "object",
+            "properties": {
+                "label": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": False
+        },
+        "namespace": {
+            "type": "object",
+            "properties": {
+                "namespace": {
+                    "type": "string",
+                    "default": "we1sv1.1"
+                }
+            },
+            "required": [
+                "namespace"
+            ],
+            "additionalProperties": False
+        },
+        "normal": {
+            "type": "object",
+            "properties": {
+                "normal": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "date"
+                            },
+                            {
+                                "$ref": "#/definitions/daterange"
+                            }
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "normal"
+            ],
+            "additionalProperties": False
+        },
+        "note": {
+            "type": "object",
+            "properties": {
+                "note": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": False
+        },
+        "notes": {
+            "type": "object",
+            "properties": {
+                "notes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/note"
+                    }
+                }
+            },
+            "required": [
+                "notes"
+            ],
+            "additionalProperties": False
+        },
+        "precise": {
+            "type": "object",
+            "properties": {
+                "precise": {
+                    "type": "array",
+                    "items": {
+                        "oneOf": [
+                            {
+                                "type": "string",
+                                "format": "date-time"
+                            },
+                            {
+                                "$ref": "#/definitions/precisedaterange"
+                            }
+                        ]
+                    }
+                }
+            },
+            "required": [
+                "precise"
+            ],
+            "additionalProperties": False
+        },
+        "precisedaterange": {
+            "type": "object",
+            "properties": {
+                "start": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "end": {
+                    "type": "string",
+                    "format": "date-time"
+                }
+            },
+            "required": [
+                "start",
+                "end"
+            ],
+            "additionalProperties": False
+        },
+        "refLocation": {
+            "type": "object",
+            "properties": {
+                "refLocation": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": False
+        },
+        "title": {
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": False
+        }
+    },
+    "type": "object",
+    "properties": {
+        "_id": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string",
+                    "pattern": "[a-zA-Z-_]+"
+                }
+            },
+            "required": [
+                "_id"
+            ],
+            "additionalProperties": False
+        },
+        "namespace": {
+            "$ref": "#/definitions/namespace"
+        },
+        "path": {
+            "type": "object",
+            "properties": {
+                "path": {
+                    "type": "string",
+                    "pattern": "^,[a-zA-Z-_,]+,$"
+                }
+            },
+            "required": [
+                "path"
+            ],
+            "additionalProperties": False
+        },
+        "description": {
+            "$ref": "#/definitions/description"
+        },
+        "notes": {
+            "$ref": "#/definitions/notes"
+        },
+        "date": {
+            "$ref": "#/definitions/date"
+        },
+        "group": {
+            "$ref": "#/definitions/group"
+        },
+        "label": {
+            "$ref": "#/definitions/label"
+        },
+        "title": {
+            "$ref": "#/definitions/title"
+        },
+        "altTitle": {
+            "$ref": "#/definitions/altTitle"
+        },
+        "refLocation": {
+            "$ref": "#/definitions/refLocation"
+        },
+        "authors": {
+            "type": "array"
+        },
+        "content": {
+            "type": "string"
+        },
+        "mimeType": {
+            "type": "string"
+        },
+        "documentType": {
+            "type": "string"
+        }
+    },
+    "required": [
+        "_id",
+        "namespace",
+        "path",
+        "date",
+        "content"
+    ],
+    "additionalProperties": True
+}
