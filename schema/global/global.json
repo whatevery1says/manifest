@@ -2,7 +2,8 @@
     "_id": {
     "type": "string",
     "pattern": "[a-zA-Z-_]+",
-    "additionalProperties": false
+    "additionalProperties": false,
+    "required": ["_id"]
     },
     "altTitle": {
     "type": "string",
