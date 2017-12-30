@@ -2,8 +2,7 @@
     "_id": {
     "type": "string",
     "pattern": "[a-zA-Z-_]+",
-    "additionalProperties": false,
-    "required": ["_id"]
+    "additionalProperties": false
     },
     "altTitle": {
     "type": "string",
@@ -73,9 +72,6 @@
     "namespace": {
     "type": "string",
     "default": "we1sv1.1",
-    "required": [
-        "namespace"
-    ],
     "additionalProperties": false
     },
     "normal": {
@@ -115,9 +111,6 @@
     "path": {
     "type": "string",
     "pattern": "^,[a-zA-Z-_,]+,$",
-    "required": [
-        "path"
-    ],
     "additionalProperties": false
     },
     "precise": {
