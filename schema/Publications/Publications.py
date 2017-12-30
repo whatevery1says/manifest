@@ -27,8 +27,10 @@ def add_global(manifest):
 
 # Add the requirements, global and manifest-specific
 def add_requirements(manifest):
-    manifest['required'] = ['_id', 'namespace', 'path'] # Global
-    manifest['required'] = manifest['required'] + ['date', 'publication', 'publisher']
+    global_requirements = ['_id', 'namespace', 'path']
+    manifest_requirements = ['date', 'publication', 'publisher']
+    requirements = global_requirements + manifest_requirements
+    manifest['required'] = requirements
     return manifest
 
 # Set manifest-specific definitions
