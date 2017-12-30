@@ -41,7 +41,7 @@ Text links point to the schema documentation. Link icons point directly to the J
 - [x] [`Metadata`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#metadata) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Metadata.json)
 - [x] [`Outputs`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#outputs) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Outputs.json)
 - [x] [`Related`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#related) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Related.json)
-- [ ] [`Data Documents`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#data-documents) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Data.json)
+- [x] [`Data Documents`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#data-documents) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Data.json)
 - [ ] `Path Node` (Generic node for branching paths)  [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/PathNode.json)
 - [ ] [`Processes`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#processes)
 - [ ] [`Step Manifests`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#step-manifests)

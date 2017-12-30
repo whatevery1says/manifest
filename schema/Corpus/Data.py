@@ -1,111 +1,51 @@
-# Data Node Object
+import jsl, json, requests
+
+# Create a Manifest Class
 class Data(jsl.Document):
-    
     class Options(object):
         additional_properties = True
-            
-    # Global Properties
-    class _id(jsl.Document):
-        _id = jsl.StringField(pattern='[a-zA-Z-_]+', required=True)
-
-    class namespace(jsl.Document):
-        namespace = jsl.StringField(default='we1sv1.1', required=True)
-
-    class path(jsl.Document):
-        path = jsl.StringField(pattern='^,[a-zA-Z-_,]+,$', required=True)
-
-    class description(jsl.Document):
-        description = jsl.StringField()
-
-    class notes(jsl.Document):
-        class note(jsl.Document):
-            note = jsl.StringField()
-        notes = jsl.ArrayField(jsl.DocumentField(note, as_ref=True), 
-                required=True)
-
-    class date(jsl.Document):
-        class daterange(jsl.Document):
-            start = jsl.StringField(pattern='DATEFORMAT', required=True)
-            end = jsl.StringField(pattern='DATEFORMAT')
-        class precisedaterange(jsl.Document):
-            start = jsl.DateTimeField(required=True)
-            end = jsl.DateTimeField(required=True)
-        class normal(jsl.Document):
-            normal = jsl.ArrayField(jsl.OneOfField([
-                jsl.StringField(pattern='DATEFORMAT'),
-                jsl.DocumentField(daterange, as_ref=True)
-            ]), required=True)
-        class precise(jsl.Document):
-            precise = jsl.ArrayField(jsl.OneOfField([
-                jsl.DateTimeField(),
-                jsl.DocumentField(precisedaterange, as_ref=True)
-            ]), required=True)
-        options = [
-            jsl.StringField(pattern='DATEFORMAT'),
-            jsl.DateTimeField(),
-            jsl.DocumentField(daterange, as_ref=True),
-            jsl.DocumentField(precisedaterange, as_ref=True),
-            jsl.DocumentField(normal, as_ref=True),
-            jsl.DocumentField(precise, as_ref=True)
-        ]
-
-        date = jsl.ArrayField(jsl.OneOfField(options), required=True)
-
-    class group(jsl.Document):
-        group = jsl.StringField()
-
-    class label(jsl.Document):
-        label = jsl.StringField()
-
-    class title(jsl.Document):
-        title = jsl.StringField()
-
-    class altTitle(jsl.Document):
-        altTitle = jsl.StringField()
-
-    class refLocation(jsl.Document):
-        refLocation = jsl.StringField()
-
-    # Data Node Properties
-    class authors(jsl.Document):
-        options = [
-            jsl.StringField(),
-            jsl.DocumentField(group, as_ref=True)
-        ]
-        authors = jsl.ArrayField(jsl.OneOfField(options))
-
-    # Instantiate all Data Node properties
-    _id = jsl.DocumentField(_id, required=True)
-    namespace = jsl.DocumentField(namespace, as_ref=True, required=True)
-    path = jsl.DocumentField(path, pattern='^,Corpus,[a-zA-Z-_,]+,$', required=True)
-    description = jsl.DocumentField(description, as_ref=True)
-    date = jsl.DocumentField(date, as_ref=True, required=True)
-    group = jsl.DocumentField(group, as_ref=True)
-    label = jsl.DocumentField(label, as_ref=True)
-    title = jsl.DocumentField(title, as_ref=True)
-    altTitle = jsl.DocumentField(altTitle, as_ref=True)
-    refLocation = jsl.DocumentField(refLocation, as_ref=True)
-    notes = jsl.DocumentField(notes, as_ref=True)
-
-    content = jsl.StringField(required=True)
-    authors = jsl.ArrayField(as_ref=True)
-    mimeType = jsl.StringField()
+    class init(jsl.Document):
+        init = jsl.StringField()        
+    # Manifest properties
+    init = jsl.DocumentField(init, as_ref=True, required=True)
+    authors = jsl.ArrayField()
+    content = jsl.StringField()
     documentType = jsl.StringField()
+    mimeType = jsl.StringField()
 
-
-def get_manifest(schema):
-    # Convert ordered dict to json
-    manifest = json.dumps(schema, indent=4)
-    # Clean up Python artefacts from JSL
-    manifest = manifest.replace('__main__.', '')
-    # jsonschema validator does not accept lower case booleans
-    # This needs to be improved so there are no false positives
-    manifest = manifest.replace(': false', ': False')
-    manifest = manifest.replace(': true', ': True')
-    # Workaround because JSL cannot generate date formats, only datetime
-    manifest = manifest.replace('"pattern": "DATEFORMAT"', '"format": "date"')
+# Add the global properties to the definitions
+def add_global(manifest):
+    url = 'https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/global/global.json'
+    manifest['definitions'] = json.loads(requests.get(url).text)
+    del manifest['properties']['init']
     return manifest
-    
-schema = Data.get_schema(ordered=True)
-manifest = get_manifest(schema)
-print(manifest)
+
+# Add the requirements, global and manifest-specific
+def add_requirements(manifest):
+    global_requirements = ['_id', 'namespace', 'path']
+    manifest_requirements = ['content']
+    requirements = global_requirements + manifest_requirements
+    manifest['required'] = requirements
+    return manifest
+
+# Set manifest-specific definitions
+def set_manifest_definitions(manifest):
+    manifest['definitions']['path']['pattern'] = '^,Corpus,[a-zA-Z-_,]+,$'
+    return manifest
+
+# Get the manifest as a dict
+def get_manifest(schema):
+    schema = json.dumps(schema, indent=4).replace('__main__.', '')
+    schema = json.loads(schema)
+    return schema
+
+# Build the manifest
+def build_manifest(schema):
+    manifest = get_manifest(schema)
+    manifest = add_global(manifest)
+    manifest = add_requirements(manifest)
+    manifest = set_manifest_definitions(manifest)
+    return manifest
+
+manifest = build_manifest(Data.get_schema(ordered=True))
+print(json.dumps(manifest, indent=4))
