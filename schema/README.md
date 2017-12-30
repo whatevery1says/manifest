@@ -35,7 +35,7 @@ A peculiarity of the `jsonschema` `validate()` method is that it provides no fee
 Text links point to the schema documentation. Link icons point directly to the JSON schema files, so right-clicking on them is an easy way to grab their urls.
 
 - [x] [`Publications`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#publications) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Publications/Publications.json)
-- [ ] [`collection`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#corpus-and-collection-nodes) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/collection.json)
+- [x] [`collection`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#corpus-and-collection-nodes) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/collection.json)
 - [ ] [`RawData`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#rawdata) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/RawData.json)
 - [ ] [`ProcessedData`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#processeddata) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/ProcessedData.json)
 - [ ] [`Metadata`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#metadata) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Metadata.json)
