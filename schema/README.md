@@ -1,13 +1,5 @@
 # Schema Validation Files
 
-## Warning!
-
-These materials are not quite ready for production. After pushing the materials I discovered some extensive problems, which I am slowly fixing. At the moment, the `Publications/Publications.json` schema works and can be generated using `Publications/Publications.py`. It can be tested with the `Publications/sample.json` manifest using `validate_manifest.py`. I will gradually update the other files so that everything works.
-
-This warning message will be updated to reflect ongoing progress.
-
-***
-
 This folder contains a collection of documents for generating schemas for validating WhatEvery1Says manifests. The subfolders contain three files for each manifest type:
 
 1. A `schema_name.py` file that can be used to generate the JSON schema file in Python.
@@ -42,7 +34,7 @@ Text links point to the schema documentation. Link icons point directly to the J
 - [x] [`Outputs`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#outputs) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Outputs.json)
 - [x] [`Related`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#related) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Related.json)
 - [x] [`Data Documents`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#data-documents) [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/Data.json)
-- [ ] `Path Node` (Generic node for branching paths)  [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/PathNode.json)
+- [x] `Path Node` (Generic node for branching paths)  [:link:](https://raw.githubusercontent.com/whatevery1says/manifest/master/schema/Corpus/PathNode.json)
 - [ ] [`Processes`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#processes)
 - [ ] [`Step Manifests`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#step-manifests)
 - [ ] [`Scripts`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#scripts)
