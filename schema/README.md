@@ -2,7 +2,7 @@
 
 ## Warning!
 
-These materials are not quite ready for production. After pushing the materials I discovered some extensive problems, which I am slowly fixing. At the moment, the `Publications/Publications.json` schema works. It can be tested with the `Publications/sample.json` manifest using `validate_manifest.py`. The Python script to generate the `Publications` schema has not yet been corrected. Once that is done, it should be possible to quickly update the other files so that everything works.
+These materials are not quite ready for production. After pushing the materials I discovered some extensive problems, which I am slowly fixing. At the moment, the `Publications/Publications.json` schema works and can be generated using `Publications/Publications.py`. It can be tested with the `Publications/sample.json` manifest using `validate_manifest.py`. I will gradually update the other files so that everything works.
 
 This warning message will be updated to reflect ongoing progress.
 
