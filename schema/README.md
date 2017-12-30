@@ -6,22 +6,6 @@ This folder contains a collection of documents for generating schemas for valida
 2. A `schema_name.json` file, which is the JSON schema file that can be used to validate manifests.
 3. A `schema_name_sample.json` file, which is a sample manifest that can be validated against `schema_name.json`.
 
-## Validating a Manifest against a Schema
-
-Validating manifests against the schema in Python requires the [`jsonschema` validation library](http://python-jsonschema.readthedocs.io/en/latest/#). You can install it with
-
-```python
-pip install jsonschema
-```
-
-There is a convenient `validate_manifest.py` script in the `schema` folder, which can be used to validate manifests or adapted for use in validation routines elsewhere. It validates against the schemas on GitHub, so it requires internet access to work.
-
-A peculiarity of the `jsonschema` `validate()` method is that it provides no feedback if the manifest is valid. For convenience, the `validate_manifest.py` script wraps this method in a `valid()` function that returns `True` if the manifest is valid.
-
-**Note:**
-
-- `jsonschema` validation errors are often less informative than one would like. But at least you know that there is the data is invalid. If it is not clear what is wrong, it is worth checking whether the manifest is well-formed JSON using [jsonlint](https://jsonlint.com/). If this does not reveal the problem, then the manifest does not follow the WE1S manifest schema in some way.
-
 ## Currently Available Validation Schemas
 
 Text links point to the schema documentation. Link icons point directly to the JSON schema files, so right-clicking on them is an easy way to grab their urls.
@@ -39,6 +23,22 @@ Text links point to the schema documentation. Link icons point directly to the J
 - [ ] [`Step Manifests`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#step-manifests)
 - [ ] [`Scripts`](https://github.com/whatevery1says/manifest/blob/master/we1s-manifest-schema-1.1.md#scripts)
 - [ ] [`Project`](https://github.com/whatevery1says/manifest/blob/master/project-manifests-draft.md)
+
+## Validating a Manifest against a Schema
+
+Validating manifests against the schema in Python requires the [`jsonschema` validation library](http://python-jsonschema.readthedocs.io/en/latest/#). You can install it with
+
+```python
+pip install jsonschema
+```
+
+There is a convenient `validate_manifest.py` script in the `schema` folder, which can be used to validate manifests or adapted for use in validation routines elsewhere. It validates against the schemas on GitHub, so it requires internet access to work.
+
+A peculiarity of the `jsonschema` `validate()` method is that it provides no feedback if the manifest is valid. For convenience, the `validate_manifest.py` script wraps this method in a `valid()` function that returns `True` if the manifest is valid.
+
+**Note:**
+
+- `jsonschema` validation errors are often less informative than one would like. But at least you know that there is the data is invalid. If it is not clear what is wrong, it is worth checking whether the manifest is well-formed JSON using [jsonlint](https://jsonlint.com/). If this does not reveal the problem, then the manifest does not follow the WE1S manifest schema in some way.
 
 ## Generating a Schema
 
