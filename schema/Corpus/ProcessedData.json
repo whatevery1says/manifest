@@ -164,20 +164,15 @@
   },
   "type": "object",
   "properties": {
-    "OCR": {
-      "type": "boolean"
-    },
-    "relationships": {
+    "processes": {
       "type": "array"
-    },
-    "rights": {
-      "type": "string"
     }
   },
   "required": [
     "_id",
     "namespace",
-    "path"
+    "path",
+    "processes"
   ],
   "additionalProperties": true
 }

@@ -8,9 +8,7 @@ class ProcessedData(jsl.Document):
         init = jsl.StringField()        
     # Manifest properties
     init = jsl.DocumentField(init, as_ref=True, required=True)
-    OCR = jsl.BooleanField()
-    relationships = jsl.ArrayField()
-    rights = jsl.StringField()
+    processes = jsl.ArrayField()
 
 # Add the global properties to the definitions
 def add_global(manifest):
@@ -22,7 +20,7 @@ def add_global(manifest):
 # Add the requirements, global and manifest-specific
 def add_requirements(manifest):
     global_requirements = ['_id', 'namespace', 'path']
-    manifest_requirements = []
+    manifest_requirements = ['processes']
     requirements = global_requirements + manifest_requirements
     manifest['required'] = requirements
     return manifest
