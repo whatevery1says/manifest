@@ -1,6 +1,12 @@
 # Schema Validation Files
 
-<h3 style="color:red;">Warning! These materials are not quite ready for production.</h3>
+## Warning!
+
+These materials are not quite ready for production. After pushing the materials I discovered some extensive problems, which I am slowly fixing. At the moment, the `Publications/Publications.json` schema works. It can be tested with the `Publications/sample.json` manifest using `validate_manifest.py`. The Python script to generate the `Publications` schema has not yet been corrected. Once that is done, it should be possible to quickly update the other files so that everything works.
+
+This warning message will be updated to reflect ongoing progress.
+
+***
 
 This folder contains a collection of documents for validating manifests against the WhatEvery1Says manifest schema. The documents are all generated using the [Python `JSL` library](http://jsl.readthedocs.io/en/latest/index.html). If the manifests need to be modified, the Python files should be used and the JSON re-generated in order to ensure consistency.
 
