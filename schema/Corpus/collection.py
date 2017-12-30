@@ -31,7 +31,7 @@ def add_requirements(manifest):
 
 # Set manifest-specific definitions
 def set_manifest_definitions(manifest):
-#     manifest['definitions'][''][''] = ''
+    manifest['definitions']['path']['pattern'] = '^,Corpus,[a-zA-Z-_,]+,$'
     return manifest
 
 # Get the manifest as a dict
