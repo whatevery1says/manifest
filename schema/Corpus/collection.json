@@ -185,7 +185,7 @@
       "namespace",
       "path",
       "collectors",
-      "publication"
+      "publications"
   ],
   "additionalProperties": true
 }
