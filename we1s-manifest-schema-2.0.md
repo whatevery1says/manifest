@@ -100,6 +100,8 @@
                 - [`script`](#script)
         - [Conventions](#conventions)
             - [Formatting Dates](#formatting-dates)
+        - [To Do](#to-do)
+
 
 # WhatEvery1Says Schema
 [[back to top](#table-of-contents)]
@@ -988,3 +990,8 @@ The `date`, `created`, and `accessed` properties all contain dates which should 
 
 * The `start` and `end` properties MUST be `string` values.
 * The `normal` and `precise` properties MAY have `strings`, `arrays`, or `objects` as their value. In other words, they can contain a single date, an `array` of dates, or an `object` containing a date range.
+
+### TO DO
+[[back to top](#table-of-contents)]
+
+An `updated` property should be added to `created`; however, it needs to be made clear when these properties refer to the date on which the manifest was created/updated and the date on which the `collection` contents were created/updated.
