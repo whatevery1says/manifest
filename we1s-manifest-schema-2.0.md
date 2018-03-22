@@ -663,7 +663,7 @@ A `string` providing a description of the nature of the data accoring to some co
 An `array` of `strings` or `objects`. The schema below uses the relationships property to describe the data as being a part of another collection ("collection1") combined with material from a third collection ("collection2"). Terms from Dublin Core are used in this example, but it is possible to use other terms from any controlled vocabulary.
 
 ```javascript
-"relationships: [
+"relationships": [
     {"isPartOf","Corpus,collection1,"},
     {"hasPart","Corpus,collection2"}
 ]
