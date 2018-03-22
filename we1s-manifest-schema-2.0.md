@@ -126,8 +126,8 @@ Each JSON document contains a JSON `object` containing a series of comma-separat
 
 ```javascript
 {
-"keyword": "value",
-"keyword": "value"
+    "keyword": "value",
+    "keyword": "value"
 }
 ```
 
@@ -135,10 +135,10 @@ These pairs are inherently unordered so, to give them sequence, they may be plac
 
 ```javascript
 {
-[
-{"keyword1": "value"},
-{"keyword2": "value"}
-]
+    [
+        {"keyword1": "value"},
+        {"keyword2": "value"}
+    ]
 }
 ```
 
@@ -146,14 +146,14 @@ For multiple properties, it may be useful to construct a more elaborate structur
 
 ```javascript
 {
-"keyword1": [
-{"sequence": 1},
-{"keyword3": "value"}
-],
-"keyword2": [
-{"sequence": 2},
-{"keyword4": "value"}
-]
+    "keyword1": [
+        {"sequence": 1},
+        {"keyword3": "value"}
+    ],
+    "keyword2": [
+        {"sequence": 2},
+        {"keyword4": "value"}
+    ]
 }
 ```
 
@@ -223,9 +223,9 @@ source, you could add a property `temporal` (cf [Dublin Core terms-temporal](htt
 
 ```javascript
 "temporal": {
-"name": "19th Century",
-"start": "1800-01-01",
-"end": "1899-12-31"
+    "name": "19th Century",
+    "start": "1800-01-01",
+    "end": "1899-12-31"
 }
 ```
 
@@ -264,8 +264,8 @@ A `string` representing the WE1S namespace and version number (e.g. "we1sv2.0").
 
 ```javascript
 "namespace": {
-"name": "we1sv2.0",
-"url": "https://github.com/whatevery1says/manifest/tree/master/schema/manifest.json"
+    "name": "we1sv2.0",
+    "url": "https://github.com/whatevery1says/manifest/tree/master/schema/manifest.json"
 }
 ```
 
@@ -377,10 +377,10 @@ An `array` containing the names of the author(s) of a publication (e.g. a book).
 
 ```javascript
 "authors": [
-{
-"group": "Summer Research Camp 2018",
-"organization": "UC Santa Barbara"
-}
+    {
+        "group": "Summer Research Camp 2018",
+        "organization": "UC Santa Barbara"
+    }
 ]
 ```
 
@@ -424,15 +424,15 @@ A citation MAY contain an `object` with field names corresponding to a schema su
 
 ```javascript
 {
-"citation": {
-"schema": "https://github.com/citation-style-language/schema",
-"fields": {
-/* A partial citation */
-"title": "The Cambridge Companion to Textual Scholarship",
-"publisher": "Cambridge University Press",
-"ISBN": "978-0-521-60329-4"
-}
-}
+    "citation": {
+    "schema": "https://github.com/citation-style-language/schema",
+    "fields": {
+        /* A partial citation */
+        "title": "The Cambridge Companion to Textual Scholarship",
+        "publisher": "Cambridge University Press",
+        "ISBN": "978-0-521-60329-4"
+        }
+    }
 }
 ```
 
@@ -449,9 +449,9 @@ The illustrative example below points to data available at a certain URL:
 
 ```javascript
 {
-"name": "an_article",
-"title": "Title of the Article",
-"path": "http://example.com/an-article.txt"
+    "name": "an_article",
+    "title": "Title of the Article",
+    "path": "http://example.com/an-article.txt"
 }
 ```
 
@@ -459,10 +459,10 @@ Local data resources are assumed to belong to data sets called `collections`. A 
 
 ```javascript
 {
-"name": "an_article",
-"title": "An Article",
-"metapath": "Corpus,collection_name,RawData",
-"data": "This is the text of the article."
+    "name": "an_article",
+    "title": "An Article",
+    "metapath": "Corpus,collection_name,RawData",
+    "data": "This is the text of the article."
 }
 ```
 
@@ -470,10 +470,10 @@ A variation of this points to an actual data file using the `path` property:
 
 ```javascript
 {
-"name": "an_article",
-"title": "An Article",
-"metapath": "Corpus,collection_name,RawData,txt",
-"path": "Corpus,collection_name,RawData,txt,an_article.txt"
+    "name": "an_article",
+    "title": "An Article",
+    "metapath": "Corpus,collection_name,RawData,txt",
+    "path": "Corpus,collection_name,RawData,txt,an_article.txt"
 }
 ```
 
@@ -528,9 +528,9 @@ Data sets are assumed to be stored in the `Corpus` database as `collections`. A 
 
 ```javascript
 {
-"name": "name_of_collection",
-"title": "Collection Name",
-"metapath": "Corpus",
+    "name": "name_of_collection",
+    "title": "Collection Name",
+    "metapath": "Corpus",
 }
 ```
 
@@ -570,10 +570,14 @@ An `array` containing the date or dates on which the `collection` was created. D
 
 An `array` containing the published sources for this collection. The value of `sources` MUST be an array of `objects`, typically from the `Sources` database. Each source object MUST have a `title` and `path` properties and MAY have an `email` property. Example:
 
-"sources": [{
-"title": "World Bank and OECD",
-"path": "http://data.worldbank.org/indicator/NY.GDP.MKTP.CD"
-}]
+```javascript
+"sources": [
+    {
+        "title": "World Bank and OECD",
+        "path": "http://data.worldbank.org/indicator/NY.GDP.MKTP.CD"
+    }
+]
+```
 
 `title`: title of the source (e.g. document or organization name)
 `path`: A url-or-path string, that is a fully qualified HTTP address, or a relative POSIX path.
@@ -588,12 +592,14 @@ The people or organizations who contributed to the harvesting, downloading, coll
 
 ```javascript
 {
-contributors: [{
-"title": "Joe Bloggs",
-"email": "joe@bloggs.com",
-"path": "http://www.bloggs.com",
-"role": "author"
-}]
+    contributors: [
+        {
+            "title": "Joe Bloggs",
+            "email": "joe@bloggs.com",
+            "path": "http://www.bloggs.com",
+            "role": "author"
+        }
+    ]
 }
 ```
 
@@ -656,8 +662,8 @@ An `array` of `strings` or `objects`. The schema below uses the relationships pr
 
 ```javascript
 "relationships: [
-{"isPartOf","Corpus,collection1,"},
-{"hasPart","Corpus,collection2"}
+    {"isPartOf","Corpus,collection1,"},
+    {"hasPart","Corpus,collection2"}
 ]
 ```
 
@@ -677,11 +683,13 @@ The license(s) under which the package is provided.
 Here is an example:
 
 ```javascript
-"licenses": [{
-"name": "ODC-PDDL-1.0",
-"path": "http://opendatacommons.org/licenses/pddl/",
-"title": "Open Data Commons Public Domain Dedication and License v1.0"
-}]
+"licenses": [
+    {
+        "name": "ODC-PDDL-1.0",
+        "path": "http://opendatacommons.org/licenses/pddl/",
+        "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+]
 ```
 
 * `name`: The name MUST be an Open Definition license ID
@@ -851,7 +859,7 @@ An `array` containing information about the configuration of the tool or script 
 
 ```javascript
 {
-"settings.cfg": "Sample config file:..."
+    "settings.cfg": "Sample config file:..."
 }
 ```
 
@@ -859,7 +867,7 @@ Likewise, you might have
 
 ```javascript
 {
-"api": "http://api.nytimes.com/svc/search/v2/articlesearch"
+    "api": "http://api.nytimes.com/svc/search/v2/articlesearch"
 }
 ```
 
@@ -901,12 +909,14 @@ The people or organizations who contributed to the creation of the tool or scrip
 
 ```javascript
 {
-contributors: [{
-"title": "Joe Bloggs",
-"email": "joe@bloggs.com",
-"path": "http://www.bloggs.com",
-"role": "author"
-}]
+contributors: [
+        {
+            "title": "Joe Bloggs",
+            "email": "joe@bloggs.com",
+            "path": "http://www.bloggs.com",
+            "role": "author"
+        }
+    ]
 }
 ```
 
@@ -958,14 +968,10 @@ The `date`, `created`, and `accessed` properties all contain dates which should 
 
 ```javascript
 {
-"date": [
-{
-"normal": "2017-09-16",
-},
-{
-"precise": "2017-09-16T12:49:05Z"
-}
-]
+    "date": [
+        {"normal": "2017-09-16"},
+        {"precise": "2017-09-16T12:49:05Z"}
+    ]
 }
 ```
 
@@ -973,14 +979,10 @@ The `date`, `created`, and `accessed` properties all contain dates which should 
 
 ```javascript
 {
-"date": [
-{
-"start": "2017-09-16",
-},
-{
-"end": "2018-09-16"
-}
-]
+    "date": [
+        {"start": "2017-09-16"},
+        {"end": "2018-09-16"}
+    ]
 }
 ```
 
