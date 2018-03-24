@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
   "definitions": {
-    "_id": {
+    "name": {
       "type": "string",
       "pattern": "ProcessedData",
       "additionalProperties": false
@@ -169,7 +169,7 @@
     }
   },
   "required": [
-    "_id",
+    "name",
     "namespace",
     "path",
     "processes"
