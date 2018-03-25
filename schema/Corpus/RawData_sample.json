@@ -1,7 +1,7 @@
 {
-    "_id": "RawData",
-    "namespace": "we1sv1.1",
-    "path": ",Corpus,New_York_Times,",
+    "name": "RawData",
+    "namespace": "we1sv1.2",
+    "path": ",Corpus,new_york_times,",
     "relationships": [
       {
         "isPartOf": ",Corpus,CollectionA,"
