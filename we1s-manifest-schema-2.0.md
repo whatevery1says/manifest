@@ -107,7 +107,7 @@
 [[back to top](#table-of-contents)]
 
 **v2.0 DRAFT**
-_Last Update: March 22, 2018_
+_Last Update: March 30, 2018_
 
 ## Language
 [[back to top](#table-of-contents)]
@@ -117,7 +117,7 @@ The key words `MUST`, `MUST NOT`, `REQUIRED`, `SHALL`, `SHALL NOT`,
 document are to be interpreted as described in [RFC
 2119](https://www.ietf.org/rfc/rfc2119.txt "RFC 2119").
 
-Throughout this documentation the term "property" refers to the keyword of a key-value pair. The term "field name" is a synonym of for "property". Data types are described using Javascript/JSON nomenclature: the term `array` refers to a list enclosed in `[]` and the term `object` refers to a key-value pair enclosed in `{}.
+Throughout this documentation the term "property" refers to the keyword of a key-value pair. The term "field name" is a synonym of for "property". Data types are described using Javascript/JSON nomenclature: the term `array` refers to a list enclosed in `[]` and the term `object` refers to a key-value pair enclosed in `{}`.
 
 ## Introduction
 [[back to top](#table-of-contents)]
@@ -343,7 +343,14 @@ manifest using terms from a controlled vocabulary or some other method of classi
 #### `image`
 [[back to top](#table-of-contents)]
 
-An image to use when displaying the manifest, for instance, in a list of manifests.
+An image to use when displaying the manifest, for instance, in a list of manifests. The value of the image property MUST be a `string` pointing to the location of the image. The string must be a fully qualified HTTP address, a relative POSIX path, or a `metapath` to a storage location in a database.
+
+#### `updated`
+[[back to top](#table-of-contents)]
+
+The `updated` property is used to describe changes made to a manifest after its initial creation. The value of the property MUST be an `array` of `objects`. Each `object` MUST contain the `change` and `date` properties and MAY contain a `contributors` property. The `change` property must be a `string`. The `date` property follows the standard pattern described under **Formatting Dates** and the `contributors` property follows the specifications described under `collection` manifests.
+
+**Important:** The `updated` property describes ONLY changes to the manifest document in which it is include. It does not apply to changes in linked data. For instance, if additional data files are added to an existing `collection`. The `change` property may indicate this, but it may not be possible to implement a procedure to recover the prior state of the data. This may affect the reproducibility of certain processes. Recommended methods of addressing this include creating a project based on the collection prior to the change, creating a separate collection for the changed data, or implementing changes along different `metapath` branches of the original `collection`. The addition of new branches can be described using the `updated` property in the `collection` manifest.
 
 ### Source Manifests
 [[back to top](#table-of-contents)]
@@ -358,7 +365,7 @@ The following globally REQUIRED properties MUST be included in every source mani
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a source manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a source manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 The following additional OPTIONAL properties MAY also be included in a source manifest.
 
@@ -492,7 +499,7 @@ Data manifests MUST have the following optional properties: `name`, `title`, `na
 #### OPTIONAL properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a data manifest: `id`, `_id`, `authors`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a data manifest: `id`, `_id`, `authors`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 A data manifest MAY contain any of the following additional properties:
 
@@ -616,7 +623,7 @@ The people or organizations who contributed to the harvesting, downloading, coll
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a `collection` manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a `collection` manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 The following additional OPTIONAL properties MAY also be included in a `collection` manifest.
 
@@ -648,7 +655,7 @@ An `array` containing embedded processes or paths to separate `process` manifest
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a `RawData` manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a `RawData` manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 The following additional OPTIONAL properties MAY also be included in a `RawData` manifest.
 
@@ -718,7 +725,7 @@ An `array` containing processes used in the transformation of the `RawData` sour
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a `ProcessedData` manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a `ProcessedData` manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 The following additional properties MAY be included in a `ProcessedData` manifest: `format`, `mediatype`, `encoding`, and `documentType`. These will be inherited by all data along the `ProcessedData` metapath unless overridden in individual data manifests.
 
@@ -735,7 +742,7 @@ The following additional properties MAY be included in a `ProcessedData` manifes
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a `Metadata` manifest: `id`, `_id`,`description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a `Metadata` manifest: `id`, `_id`,`description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 The following additional properties MAY be included in a `Metadata` manifest: `format`, `mediatype`, `encoding`, and `documentType`. These will be inherited by all data along the `Metadata` metapath unless overridden in individual data manifests.
 
@@ -752,7 +759,7 @@ The following additional properties MAY be included in a `Metadata` manifest: `f
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a `Outputs` manifest: `id`, `_id`,`description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a `Outputs` manifest: `id`, `_id`,`description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 The following additional properties MAY be included in a `Outputs` manifest: `format`, `mediatype`, `encoding`, and `documentType`. These will be inherited by all data along the `Outputs` metapath unless overridden in individual data manifests.
 
@@ -769,7 +776,7 @@ The following additional properties MAY be included in a `Outputs` manifest: `fo
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a `Related` manifest: `id`, `_id`,`description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a `Related` manifest: `id`, `_id`,`description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 The following additional properties MAY be included in a `Related` manifest: `format`, `mediatype`, `encoding`, and `documentType`. These will be inherited by all data along the `Related` metapath unless overridden in individual data manifests.
 
@@ -808,7 +815,7 @@ The people or organizations who contributed to the implementing the processes de
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a `process` manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a `process` manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 The following additional properties MAY be included in a `process` manifest.
 
@@ -845,7 +852,7 @@ A `string` describing the means by which the processing step was implemented. Th
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a `step` manifest: `id`, `_id`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a `step` manifest: `id`, `_id`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 The following additional properties MAY be included in a `step` manifest.
 
@@ -932,7 +939,7 @@ contributors: [
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
 
-The following globally OPTIONAL properties MAY be included in a `script` manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`.
+The following globally OPTIONAL properties MAY be included in a `script` manifest: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`.
 
 The following additional properties MAY be included in a `script` manifest.
 
