@@ -100,6 +100,8 @@
                 - [`script`](#script)
         - [Conventions](#conventions)
             - [Formatting Dates](#formatting-dates)
+        - [WE1S Projects](#we1s-projects)
+            - [Project Manifests](#project-manifests)
 
 
 # WhatEvery1Says Schema
@@ -996,3 +998,24 @@ The `date`, `created`, and `accessed` properties all contain dates which should 
 
 * The `start` and `end` properties MUST be `string` values.
 * The `normal` and `precise` properties MAY have `strings`, `arrays`, or `objects` as their value. In other words, they can contain a single date, an `array` of dates, or an `object` containing a date range.
+
+### WE1S Projects
+[[back to top](#table-of-contents)]
+
+A project is a containerised set of manifests and data that can be stored and manipulated outside the database. They may in turn be stored in a separate `Projects` database for future reference.
+
+In form, a project is a Frictionless Data data package built from the `metapath` contents of its resources. It consists of the following:
+
+* A folder containing a `datapackage.json` file with the following limitation: the `resources` property must contain the paths `Sources`, `Corpus`, `Processes`, and `Scripts` AND _only_ these paths. The folder should also contain subfolders with these same names.
+* Each subfolder SHOULD contain at least one manifest file. For instance, the `Corpus` folder might contain a `collection` manifest called `new_york_times.json`. This SHOULD have a corresponding folder called with the same name minus the file extension (e.g. `new_york_times`).
+* Additional subfolders and manifests should be created at the next level of the file hierarchy for each resource added to the data package. For instance, if there is a `Corpus,new_york_times,RawData` manifest added, the data package folder should contain a `RawData.json` and a `Corpus/new_york_times/RawData` folder inside the `Corpus/new_york_times` folder.
+
+Note that this does not exactly follow the Frictionless Data specificiation because not all resources are listed in the `datapackage.json` file. However, it is possible to create a complete list of resources programmatically by recursively listing the contents of the folders or querying properties in the manifests contained therein.
+
+#### Project Manifests
+
+The following REQUIRED properties MUST be included in every `project` manifest: `name`, `title`, `namespace`, `content`, `contributors`, `created`.
+
+The `created` and `contributors` properties are the same as found in `collection` manifests. The `content` property MUST contain a [BSON](http://bsonspec.org/)-formatted `.zip` archive, the name of which must the same value as the `name` property. The other properties are globally REQUIRED properties.
+
+In addition, `project` manifests MAY contain the following OPTIONAL properties: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`, `webpage`, `contentType`, `citation`. The last three are the same as found in `source` manifests.
