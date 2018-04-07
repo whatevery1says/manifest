@@ -614,12 +614,12 @@ The people or organizations who contributed to the harvesting, downloading, coll
 ```
 
 * `title`: A `string` containing the name/title of the contributor (name for person, name/title of organization).
-* `path`: A `string` containing a fully qualified http URL pointing to a relevant location online for the contributor
+* `path`: A `string` containing a fully qualified http URL pointing to a relevant location online for the contributor.
 * `email`: A `string` containing an email address.
 * `role`: A `string` describing the role of the contributor. It MUST be one of: `author`, `publisher`, `maintainer`, `wrangler`, and `contributor`. Defaults to `contributor`.
-* Note on semantics: use of the `author` property does not imply that that person was the original creator of the data in the data package - merely that they created the data.
+* Note on semantics: use of the `author` property does not imply that that person was the original creator of the data in the collection - merely that they created the data.
 * `group`: A `string` describing a smaller body of contributors within an `organization`.
-* `organization`: A `string` describing the organization this to which this contributor is affiliated.
+* `organization`: A `string` describing the organization to which this contributor is affiliated.
 
 #### OPTIONAL Properties
 [[back to top](#table-of-contents)]
@@ -974,30 +974,35 @@ The `date`, `created`, and `accessed` properties all contain dates which should 
 
 * Individual dates MUST be `strings` in date (`YYYY-MM-DD`) or datetime (e.g. `2017-09-16T12:49:05Z`) format.
 * Multiple dates may be given in an `array`.
-* If it is necessary to specify the format, the date may be given as an `object` containing `normal` and/or `precise` properties:
+* If it is necessary to specify the format, the date may be given as an `object` containing `text` and `format` properties:
 
 ```javascript
 {
     "date": [
-        {"normal": "2017-09-16"},
-        {"precise": "2017-09-16T12:49:05Z"}
+        {
+            "text": "2017-09-16",
+            "format": "date"
+        },
+        {
+            "text": "2017-09-16T12:49:05Z",
+            "format": "date"
+        }
     ]
 }
 ```
 
-* Date ranges can be specified with the `start` and `end` properties:
+* Date ranges can be specified with an `object` with the keyword `range`. The `object` MUST contain a `start` property and MAY contain an `end` property. Both MUST have `string` values as in the example below:
 
 ```javascript
 {
-    "date": [
-        {"start": "2017-09-16"},
-        {"end": "2018-09-16"}
-    ]
+    "date": {
+        "range": {
+            "start": "2017-09-16",
+            "end": "2018-09-16"
+        }
+    }
 }
 ```
-
-* The `start` and `end` properties MUST be `string` values.
-* The `normal` and `precise` properties MAY have `strings`, `arrays`, or `objects` as their value. In other words, they can contain a single date, an `array` of dates, or an `object` containing a date range.
 
 ### WE1S Projects
 [[back to top](#table-of-contents)]
