@@ -973,7 +973,24 @@ A `string` copy of the script code. Line breaks in the encode should be given as
 The `date`, `created`, and `accessed` properties all contain dates which should be given according to the following conventions:
 
 * Individual dates MUST be `strings` in date (`YYYY-MM-DD`) or datetime (e.g. `2017-09-16T12:49:05Z`) format.
+
+```javascript
+{
+    "date": "2017-09-16"
+}
+```
+
 * Multiple dates may be given in an `array`.
+
+```javascript
+{
+    "date": [
+        "2017-09-16",
+        "2017-09-16T12:49:05Z"
+    ]
+}
+```
+
 * If it is necessary to specify the format, the date may be given as an `object` containing `text` and `format` properties:
 
 ```javascript
@@ -985,7 +1002,7 @@ The `date`, `created`, and `accessed` properties all contain dates which should 
         },
         {
             "text": "2017-09-16T12:49:05Z",
-            "format": "date"
+            "format": "datetime"
         }
     ]
 }
@@ -1003,6 +1020,8 @@ The `date`, `created`, and `accessed` properties all contain dates which should 
     }
 }
 ```
+
+* `start` and `end` values may also be expressed as `objects` containing `text` and `format` properties.
 
 ### WE1S Projects
 [[back to top](#table-of-contents)]
