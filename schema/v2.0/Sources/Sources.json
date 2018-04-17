@@ -112,7 +112,7 @@
     "metapath": {
       "$id": "/properties/metapath",
       "type": "string",
-      "pattern": "^(Sources,)+"
+      "pattern": "Sources"
     },
     "title": {
       "$id": "/properties/title",
