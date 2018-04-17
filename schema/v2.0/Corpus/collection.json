@@ -189,92 +189,94 @@
       "type": "string"
     }
   },
-  "format": {
-    "type": "string"
-  },
-  "mediatype": {
-    "type": "string",
-    "pattern": "^(.+)/(.+)$"
-  },
-  "encoding": {
-    "type": "string",
-    "default": "utf-8"
-  },
-  "contributors": {
-    "type": "array",
-    "minItems": 1,
-    "items": {
-      "properties": {
-        "title": {
-          "type": "string"
-        },
-        "path": {
-          "type": "string",
-          "pattern": "^(?=^[^./~])(^((?!\\.{2}).)*$).*$"
-        },
-        "email": {
-          "type": "string",
-          "format": "email"
-        },
-        "group": {
-          "type": "string"
-        },
-        "organisation": {
-          "type": "string"
-        },
-        "role": {
-          "type": "string",
-          "enum": [
-            "publisher",
-            "author",
-            "maintainer",
-            "wrangler",
-            "contributor"
-          ],
-          "default": "contributor"
-        }
-      },
-      "required": [
-        "title"
-      ]
-    }
-  },
-  "sources": {
-    "$id": "/properties/sources",
-    "type": "array",
-    "items": {
-      "type": "object",
-      "properties": {
-        "title": {
-          "type": "string"
-        },
-        "path": {
-          "type": "string",
-          "format": "^(?=^[^./~])(^((?!\\.{2}).)*$).*$"
-        },
-        "email": {
-          "type": "string",
-          "format": "email"
-        }
-      },
-      "required": [
-        "title",
-        "path"
-      ]
-    }
-  },
-  "processes": {
-    "type": "array",
-    "items": {
+  "properties": {
+    "format": {
+      "type": "string"
+    },
+    "mediatype": {
       "type": "string",
-      "format": "uri"
+      "pattern": "^(.+)/(.+)$"
+    },
+    "encoding": {
+      "type": "string",
+      "default": "utf-8"
+    },
+    "contributors": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string",
+            "pattern": "^(?=^[^./~])(^((?!\\.{2}).)*$).*$"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "group": {
+            "type": "string"
+          },
+          "organisation": {
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "enum": [
+              "publisher",
+              "author",
+              "maintainer",
+              "wrangler",
+              "contributor"
+            ],
+            "default": "contributor"
+          }
+        },
+        "required": [
+          "title"
+        ]
+      }
+    },
+    "sources": {
+      "$id": "/properties/sources",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string"
+          },
+          "path": {
+            "type": "string",
+            "format": "^(?=^[^./~])(^((?!\\.{2}).)*$).*$"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          }
+        },
+        "required": [
+          "title",
+          "path"
+        ]
+      }
+    },
+    "processes": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "format": "uri"
+      }
+    },
+    "queryterms": {
+      "type": "array"
+    },
+    "workstation": {
+      "type": "string"
     }
-  },
-  "queryterms": {
-    "type": "array"
-  },
-  "workstation": {
-    "type": "string"
   },
   "required": [
     "name",
