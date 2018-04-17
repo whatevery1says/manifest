@@ -1,0 +1,16 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema#",
+    "name": "new_york_times",
+    "namespace": "we1sv1.2",
+    "publication": "The New York Times",
+    "path": ",Publications,",
+    "description": "All the news that’s fit to download",
+    "publisher": "The New York Times",
+    "date": [{"start": "2013-01-01", "end": "2013-01-01"}],
+    "edition": "online", 
+    "altTitle": "New York Times",
+    "contentType": "newspaper",
+    "language": "EN",
+    "country": "US",
+    "authors": ["John Smith"]
+}

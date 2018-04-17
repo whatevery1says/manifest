@@ -1,0 +1,25 @@
+{
+    "name": "new_york_times",
+    "namespace": "we1sv1.2",
+    "publications": [
+      ",Publications,new_york_times,"
+    ],
+    "path": ",Corpus,",
+    "description": "Some content from the New York Times",
+    "collectors": [
+      "John Smith"
+    ],
+    "date": [
+      {
+        "start": "2013-01-01",
+        "end": "2013-01-01"
+      }
+    ],
+    "workstation": "Windows 8.1",
+    "queryTerms": [
+      "humanities"
+    ],
+    "processes": [
+      "path"
+    ]
+}
