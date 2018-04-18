@@ -177,10 +177,6 @@
         "type": "string"
       }
     },
-    "OCR": {
-      "type": "boolean",
-      "default": false
-    },
     "shortTitle": {
       "$id": "/properties/shortTitle",
       "type": "string"
