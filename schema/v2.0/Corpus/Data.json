@@ -102,7 +102,7 @@
     "name": {
       "$id": "/properties/name",
       "type": "string",
-      "pattern": "ProcessedData"
+      "pattern": "^([-a-z0-9._])+$"
     },
     "namespace": {
       "$id": "/properties/namespace",
@@ -116,8 +116,7 @@
     },
     "title": {
       "$id": "/properties/title",
-      "type": "string",
-      "pattern": "ProcessedData"
+      "type": "string"
     },
     "date": {
       "$ref": "#/definitions/date"
