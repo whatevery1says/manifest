@@ -102,7 +102,7 @@
     "name": {
       "$id": "/properties/name",
       "type": "string",
-      "pattern": "^([-a-z0-9._])+$"
+      "pattern": "RawData"
     },
     "namespace": {
       "$id": "/properties/namespace",
