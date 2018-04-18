@@ -207,8 +207,7 @@
   "processes": {
     "type": "array",
     "items": {
-      "type": "string",
-      "format": "uri"
+      "type": "string"
     }
   },
   "required": [
