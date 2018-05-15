@@ -109,7 +109,7 @@
 		"metapath": {
 			"$id": "/properties/metapath",
 			"type": "string",
-			"pattern": "^(Corpus,)+"
+			"pattern": "Projects"
 		},
 		"title": {
 			"$id": "/properties/title",
@@ -234,9 +234,12 @@
 		}
 	},
 	"required": [
+		"metapath",
+		"content",
+		"contributors",
+		"created"
 		"name",
 		"namespace",
-		"metapath",
 		"title"
 	],
 	"additionalProperties": true
