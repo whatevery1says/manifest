@@ -102,7 +102,7 @@
     "name": {
       "$id": "/properties/name",
       "type": "string",
-      "pattern": "^([-a-z0-9._])+$"
+      "pattern": "Metadata"
     },
     "namespace": {
       "$id": "/properties/namespace",
@@ -116,7 +116,8 @@
     },
     "title": {
       "$id": "/properties/title",
-      "type": "string"
+      "type": "string",
+      "pattern": "Metadata"
     },
     "date": {
       "$ref": "#/definitions/date"
@@ -195,6 +196,9 @@
       "type": "string",
       "default": "utf-8"
     }
+  },
+  "documentType": {
+    "type": "string"
   },
   "required": [
     "name",

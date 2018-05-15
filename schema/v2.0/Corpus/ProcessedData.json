@@ -102,7 +102,7 @@
     "name": {
       "$id": "/properties/name",
       "type": "string",
-      "pattern": "^([-a-z0-9._])+$"
+      "pattern": "ProcessedData"
     },
     "namespace": {
       "$id": "/properties/namespace",
@@ -116,7 +116,8 @@
     },
     "title": {
       "$id": "/properties/title",
-      "type": "string"
+      "type": "string",
+      "pattern": "ProcessedData"
     },
     "date": {
       "$ref": "#/definitions/date"
@@ -176,10 +177,6 @@
         "type": "string"
       }
     },
-    "OCR": {
-      "type": "boolean",
-      "default": false
-    },
     "shortTitle": {
       "$id": "/properties/shortTitle",
       "type": "string"
@@ -206,8 +203,7 @@
   "processes": {
     "type": "array",
     "items": {
-      "type": "string",
-      "format": "uri"
+      "type": "string"
     }
   },
   "required": [
