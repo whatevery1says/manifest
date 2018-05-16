@@ -1043,3 +1043,38 @@ The following REQUIRED properties MUST be included in every `project` manifest: 
 The `created` and `contributors` properties are the same as found in `collection` manifests. The `content` property MUST contain a [BSON](http://bsonspec.org/)-formatted `.zip` archive, the name of which must the same value as the `name` property. The other properties are globally REQUIRED properties.
 
 In addition, `project` manifests MAY contain the following OPTIONAL properties: `id`, `_id`, `description`, `version`, `keyword`, `image`, `shortTitle`, `label`, `notes`, `updated`, `webpage`, `contentType`, `citation`. The last three are the same as found in `source` manifests.
+
+In general, `project` resources can be reconstructed by iterating through the project's folders and subfolders. However, for some applications this can be an inconvenience, especially if the project is archived as a zip file. In these cases, the `project` manifest MAY contain a `resources` property. This MUST be an array of strings or objects. By default, the array will contain strings corresponding to the paths to the individual resources, whether within the project's file structure or on the internet:
+
+```javascript
+"resources": [
+    "Corpus/collection_name/RawData",
+    "http://example.com/resource-path.csv"
+]
+```
+
+Paths ending in folders are assumed to be parents of all files and subfolders contained therein. However, it is up to the individual application to parse them recursively or filter the data as necessary.
+
+The example above may alternatively be represented as an array of objects with the `path` property:
+
+```javascript
+"resources": [
+    {
+        "path": "Corpus/collection_name/RawData"
+    },
+    {
+        "path": "http://example.com/resource-path.csv"
+    }
+]
+```
+
+Object representation of resources is most useful when the resources contain other methods of accessing content such as database queries. In this case, the `db_query` property may be used with a `platform` property.
+
+```javascript
+"resources": [
+    {
+        "db_query": "Corpus/collection_name",
+        "platform": "MongoDB"
+    }
+]
+```
