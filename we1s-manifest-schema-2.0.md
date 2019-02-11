@@ -708,6 +708,8 @@ Here is an example:
 
 Omission of the `licenses` property assumes a single value with "Free Culture" as the `name` and an empty `path`.
 
+Further information about applying licenses can be found in the [Frictionless Data documentation](https://frictionlessdata.io/docs/applying-licenses/).
+
 ### `ProcessedData` Nodes
 [[back to top](#table-of-contents)]
 
