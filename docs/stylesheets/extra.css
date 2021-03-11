@@ -1,0 +1,58 @@
+[data-md-color-scheme="we1s"] {
+    --md-primary-fg-color:        #d65050;;
+    --md-primary-fg-color--light: #ECB7B7;
+    --md-primary-fg-color--dark:  #90030C;
+  }
+
+  mark.glossary {
+    background: none;
+  }
+
+/*--------------------------------------------------------------
+Go to top button
+--------------------------------------------------------------*/
+.go-top {
+  position: fixed !important;
+  right: 20px;
+  bottom: -45px;
+  color: #fff;
+  display: block;
+  font-size: 22px;
+  line-height: 35px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  visibility: hidden;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  opacity: 0;
+  z-index: 9999;
+  cursor: pointer;
+  -webkit-border-radius: 2px;
+      -moz-border-radius: 2px;
+      -o-border-radius: 2px;
+      border-radius: 2px;
+  -webkit-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      -ms-transition: all 0.5s;
+        -o-transition: all 0.5s;
+          transition: all 0.5s;
+}
+
+.go-top {
+  background-color: #d65050;
+}
+
+.go-top:hover {
+  background-color: #fff;
+  border: 1px solid #000;
+}
+.go-top.show {
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+  filter: alpha(opacity=100);
+  opacity: 1;
+  visibility: visible;
+  bottom : 11px;
+}
+
+
