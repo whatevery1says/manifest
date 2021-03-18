@@ -270,20 +270,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#currently-available-validation-schemas" class="md-nav__link">
-    Currently Available Validation Schemas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-a-schema" class="md-nav__link">
-    Generating a Schema
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -323,20 +309,6 @@
   
 </li>
       
-        <li class="md-nav__item">
-  <a href="#currently-available-validation-schemas" class="md-nav__link">
-    Currently Available Validation Schemas
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#generating-a-schema" class="md-nav__link">
-    Generating a Schema
-  </a>
-  
-</li>
-      
     </ul>
   
 </nav>
@@ -355,84 +327,16 @@
                 
                 
                 <h1 id="working-with-the-schema">Working with the Schema</h1>
-<p>Currently, WE1S offers some simple tools for validating manifests against the schema or generating schema files. Schema files are files in the JSON Schema format with names like <code>schema_name.json</code>. Software to validate manifests against these schema files is available for <a href="https://json-schema.org/implementations.html#validators" target="_blank">a variety of programming languages</a>. The WE1S Project provides <a href="https://github.com/whatevery1says/manifest/examples" target="_blank">sample manifests</a> of each type with names like <code>schema_name_sample.json</code>.</p>
+<p>Currently, WE1S offers a simple tool for validating manifests against the schema. Schema files are files in the JSON Schema format with names like <code>schema_name.json</code>. Software to validate manifests against these schema files is available for <a href="https://json-schema.org/implementations.html#validators" target="_blank">a variety of programming languages</a>. The WE1S Project provides <a href="https://github.com/whatevery1says/manifest/examples" target="_blank">sample manifests</a> of each type with names like <code>Sources.json</code>.</p>
 <h2 id="validating-a-manifest-against-a-schema">Validating a Manifest against a Schema</h2>
 <p>In this section we demonstrate a method of validating manifests against the schema in Python using the <a href="http://python-jsonschema.readthedocs.io/en/latest/" target="_blank"><code>jsonschema</code></a> library. You can install it with</p>
 <div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">jsonschema</span>
 </code></pre></div>
-<p>WE1S provides a convenient <a href="https://github.com/whatevery1says/manifest/scriptss" target="_blank"><code>validate_manifest.py</code></a> script in the <code>schema</code> folder, which can be used to validate manifests or adapted for use in validation routines elsewhere. It validates against the schema files on GitHub, so it requires internet access to work.</p>
-<p>A peculiarity of the <code>jsonschema</code> <code>validate()</code> method is that it provides no feedback if the manifest is valid. For convenience, the <code>validate_manifest.py</code> script wraps this method in a <code>valid()</code> function that returns <code>True</code> if the manifest is valid.</p>
+<p>WE1S provides a convenient <a href="https://github.com/whatevery1says/manifest/tree/master/scripts" target="_blank"><code>validate.py</code></a> script in the <code>schema</code> folder, which can be used to validate manifests or adapted for use in validation routines elsewhere. <code>validate.py</code> is a command line tool which accepts a path to the schema file and a path to the data file you wish to validate. The script accepts urls, so you can validate against the apropriate schema files in the GitHub repository's <a href="https://github.com/whatevery1says/manifest/tree/master/schema" target="_blank"><code>schema</code> folder (make sure to use the url for the "raw" code). There are also a set of test files in the schema's <code>tests</code> folder.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p><code>jsonschema</code> validation errors are often less informative than one would like. But at least you know that there is the data is invalid. If it is not clear what is wrong, it is worth checking whether the manifest is well-formed JSON using <a href="https://jsonlint.com/" target="_blank">jsonlint</a>. If this does not reveal the problem, then the manifest does not follow the WE1S manifest schema in some way.</p>
 </div>
-<h2 id="currently-available-validation-schemas">Currently Available Validation Schemas</h2>
-<p>There is no single schema file for the entire WE1S schema. However, schema files are available for individual components as shown below:</p>
-<table>
-  <thead>
-    <tr>
-      <th>Corpus</th>
-      <th>Projects</th>
-      <th>Sources</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><a href="https://github.com/whatevery1says/manifest/blob/master/schema/v2.0/Corpus/collection.json" target="_blank">collection.json</a></td>
-      <td><a href="https://github.com/whatevery1says/manifest/blob/master/schema/v2.0/Projects/Projects.json" target="_blank">Projects.json</a></td>
-      <td><a href="https://github.com/whatevery1says/manifest/blob/master/schema/v2.0/Sources/Sources.json" target="_blank">Sources.json</a></td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/whatevery1says/manifest/blob/master/schema/v2.0/Corpus/Data.json" target="_blank">Data.json</a></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/whatevery1says/manifest/blob/master/schema/v2.0/Corpus/Metadata.json" target="_blank">Metadata.json</a></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/whatevery1says/manifest/blob/master/schema/v2.0/Corpus/Outputs.json" target="_blank">Outputs.json</a></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/whatevery1says/manifest/blob/master/schema/v2.0/Corpus/PathNode.json" target="_blank">PathNode.json</a></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/whatevery1says/manifest/blob/master/schema/v2.0/Corpus/ProcessedData.json" target="_blank">ProcessedData.json</a></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/whatevery1says/manifest/blob/master/schema/v2.0/Corpus/RawData.json" target="_blank">RawData.json</a></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td><a href="https://github.com/whatevery1says/manifest/blob/master/schema/v2.0/Corpus/Related.json" target="_blank">Related.json</a></td>
-      <td>&nbsp;</td>
-      <td>&nbsp;</td>
-    </tr>
-  </tbody>
-</table>
-
-<h2 id="generating-a-schema">Generating a Schema</h2>
-<p>Generating a JSON schema for a manifest type requires the The documents are all generated using the Python <a href="http://jsl.readthedocs.io/en/latest/index.html" target="_blank"><code>JSL</code></a> library. If the manifests need to be modified, the Python files should be used and the JSON re-generated in order to ensure consistency. You can install <code>JSL</code> with</p>
-<div class="highlight"><pre><span></span><code><span class="n">pip</span> <span class="n">install</span> <span class="n">jsl</span>
-</code></pre></div>
-<p>The Python script will output a schema in string format. There is no built-in code to write the string to a file, but it is easy to copy and paste in a file and then saved in JSON format.</p>
-<p>JSL is a convenient library for creating JSON schemas, but it has some important limitations in how the schemas can be structured. As a result, JSL is used to initialise the schema and it is then transformed into a dict by a pipeline of build functions. Eventually, this can be rewritten as a single class. The pipeline is structured as follows:</p>
-<ol>
-<li>A manifest class is generated using a single <code>init</code> property, which is paced inside the JSON schema <code>definitions</code> property and listed as a requirement. <code>additionalProperties</code> is set to <code>true</code> so that custom properties can be added to the schema. Other properties specific to the manifest type are also initialised.</li>
-<li>The schema is converted from an ordered dict to a dict to make it easier to work with.</li>
-<li>The <code>add_global</code> function loads the global properties from GitHub and adds them to the schema's <code>definitions</code> property. It also deletes the <code>init</code> property. Global properties are drawn from the <code>global/global.js</code> file on GitHub, so the script will only work if you have internet access.</li>
-<li>The <code>add_requirements</code> function sets the schema's <code>required</code> property for both global and manifest-specific requirements.</li>
-<li>The <code>set_manifest_definitions</code> function allows customisation of the schema's definition properties. This most often involves setting the <code>path</code> property to require a pattern specific to the type of manifest being generated.</li>
-</ol>
                 
               
               
