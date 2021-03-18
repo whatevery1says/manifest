@@ -381,11 +381,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#source-manifests" class="md-nav__link">
-    Source Manifests
+  <a href="#sources-manifests" class="md-nav__link">
+    Sources Manifests
   </a>
   
-    <nav class="md-nav" aria-label="Source Manifests">
+    <nav class="md-nav" aria-label="Sources Manifests">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -822,11 +822,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#process-manifests" class="md-nav__link">
-    process Manifests
+  <a href="#processes-manifests" class="md-nav__link">
+    Processes Manifests
   </a>
   
-    <nav class="md-nav" aria-label="process Manifests">
+    <nav class="md-nav" aria-label="Processes Manifests">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -919,8 +919,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#type" class="md-nav__link">
-    type
+  <a href="#implementation" class="md-nav__link">
+    implementation
   </a>
   
 </li>
@@ -977,11 +977,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#script-manifests" class="md-nav__link">
-    Script Manifests
+  <a href="#scripts-manifests" class="md-nav__link">
+    Scripts Manifests
   </a>
   
-    <nav class="md-nav" aria-label="Script Manifests">
+    <nav class="md-nav" aria-label="Scripts Manifests">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1275,11 +1275,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#source-manifests" class="md-nav__link">
-    Source Manifests
+  <a href="#sources-manifests" class="md-nav__link">
+    Sources Manifests
   </a>
   
-    <nav class="md-nav" aria-label="Source Manifests">
+    <nav class="md-nav" aria-label="Sources Manifests">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1716,11 +1716,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#process-manifests" class="md-nav__link">
-    process Manifests
+  <a href="#processes-manifests" class="md-nav__link">
+    Processes Manifests
   </a>
   
-    <nav class="md-nav" aria-label="process Manifests">
+    <nav class="md-nav" aria-label="Processes Manifests">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -1813,8 +1813,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#type" class="md-nav__link">
-    type
+  <a href="#implementation" class="md-nav__link">
+    implementation
   </a>
   
 </li>
@@ -1871,11 +1871,11 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#script-manifests" class="md-nav__link">
-    Script Manifests
+  <a href="#scripts-manifests" class="md-nav__link">
+    Scripts Manifests
   </a>
   
-    <nav class="md-nav" aria-label="Script Manifests">
+    <nav class="md-nav" aria-label="Scripts Manifests">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2019,7 +2019,7 @@
     </tr>
     <tr>
       <td>Updated</td>
-      <td>11 March 2021</td>
+      <td>18 March 2021</td>
     </tr>
     <tr>
       <td>JSON Schema</td>
@@ -2109,13 +2109,13 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <p class="admonition-title">Important</p>
 <p>The <code>updated</code> property describes ONLY changes to the manifest document in which it is include. It does not apply to changes in linked data. For instance, if additional data files are added to an existing <code>collection</code>. The <code>change</code> property may indicate this, but it may not be possible to implement a procedure to recover the prior state of the data. This may affect the reproducibility of certain processes. Recommended methods of addressing this include creating a project based on the collection prior to the change, creating a separate collection for the changed data, or implementing changes along different <code>metapath</code> branches of the original <code>collection</code>. The addition of new branches can be described using the <code>updated</code> property in the <code>collection</code> manifest.</p>
 </div>
-<h3 id="source-manifests">Source Manifests</h3>
-<p>Source manifests contain bibliographical information about the sources (typically publications) of data in the WE1S <code>Corpus</code>. All source manifests are stored in the WE1S <code>Sources</code> database and will therefore have the <code>metapath</code> value <code>Sources,source_name</code>.</p>
+<h3 id="sources-manifests"><code>Sources</code> Manifests</h3>
+<p><code>Sources</code> manifests contain bibliographical information about the sources (typically publications) of data in the WE1S <code>Corpus</code>. All <code>Sources</code> manifests are stored in the WE1S <code>Sources</code> database and will therefore have the <code>metapath</code> value <code>Sources</code>.</p>
 <h4 id="required-properties">REQUIRED Properties</h4>
-<p>The following globally REQUIRED properties MUST be included in every source manifest: <code>name</code>, <code>title</code>, <code>namespace</code>.</p>
+<p>The following globally REQUIRED properties MUST be included in every <code>Sources</code> manifest: <code>name</code>, <code>title</code>, <code>namespace</code>.</p>
 <h4 id="optional-properties">OPTIONAL Properties</h4>
-<p>The following globally OPTIONAL properties MAY be included in a source manifest: <code>id</code>, <code>_id</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
-<p>The following additional OPTIONAL properties MAY also be included in a source manifest.</p>
+<p>The following globally OPTIONAL properties MAY be included in a <code>Sources</code> manifest: <code>id</code>, <code>_id</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
+<p>The following additional OPTIONAL properties MAY also be included in a <code>Sources</code> manifest.</p>
 <h5 id="publisher"><code>publisher</code></h5>
 <p>A <code>string</code> containing the name of the source's publisher.</p>
 <h5 id="webpage"><code>webpage</code></h5>
@@ -2135,7 +2135,7 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <h5 id="edition"><code>edition</code></h5>
 <p>A <code>string</code> indicating the edition number (e.g. "2nd") or medium (e.g. "print" or "online") of the publication. WE1S currently has no controlled vocabulary for <code>edition</code> values.</p>
 <h5 id="contenttype"><code>contentType</code></h5>
-<p>A <code>string</code> representing the nature or genre of the data (e.g. "newspaper").WE1S does not currently have a controlled vocabulary for the value of this field.</p>
+<p>A <code>string</code> representing the nature or genre of the data (e.g. "newspaper"). WE1S does not currently have a controlled vocabulary for the value of this field.</p>
 <h5 id="country"><code>country</code></h5>
 <p>A <code>string</code> value taken from the <a href="https://en.wikipedia.org/wiki/ISO_3166-1" target="_blank">ISO 3166-1 ALPHA-2</a> country codes.</p>
 <h5 id="language"><code>language</code></h5>
@@ -2157,10 +2157,10 @@ manifest using terms from a controlled vocabulary or some other method of classi
   <span class="p">}</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>There is no standard JSON schema for citations, but WE1S recommends the Citation Style Language. CSL is used by <a href="http://zotero.org/" target="_blank">Zotero</a>, which can export its records as JSON objects that can be inserted in source manifests.</p>
-<h3 id="data-manifests">Data Manifests</h3>
-<p>A data manifest is a JSON file which contains inline data or, points to data in another location.</p>
-<p>Data manifests containerise data files, generally, but not always textual data. All WE1S data manifests are stored in the <code>Corpus</code> database and therefore will have  <code>metapath</code> values beginning with <code>Corpus</code>.</p>
+<p>There is no standard JSON schema for citations, but WE1S recommends the Citation Style Language. CSL is used by <a href="http://zotero.org/" target="_blank">Zotero</a>, which can export its records as JSON objects that can be inserted in <code>Sources</code> manifests.</p>
+<h3 id="data-manifests"><code>Data</code> Manifests</h3>
+<p>A <code>Data</code> manifest is a JSON file which contains inline data or, points to data in another location.</p>
+<p><code>Data</code> manifests containerise data files, generally, but not always textual data. All WE1S <code>Data</code> manifests are stored in the <code>Corpus</code> database and therefore will have  <code>metapath</code> values beginning with <code>Corpus</code>.</p>
 <p>The illustrative example below points to data available at a certain URL:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;an_article&quot;</span><span class="p">,</span>
@@ -2168,7 +2168,7 @@ manifest using terms from a controlled vocabulary or some other method of classi
   <span class="nt">&quot;path&quot;</span><span class="p">:</span> <span class="s2">&quot;http://example.com/an-article.txt&quot;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Local data resources are assumed to belong to data sets called <code>collections</code>. A data manifest can contain "inline" data by referencing the manifest's location relative to a <code>collection</code> in the <code>metapath</code> property. The data itself is given in the <code>data</code> property.</p>
+<p>Local data resources are assumed to belong to data sets called <code>collections</code>. A <code>Data</code> manifest can contain "inline" data by referencing the manifest's location relative to a <code>collection</code> in the <code>metapath</code> property. The data itself is given in the <code>data</code> property.</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;an_article&quot;</span><span class="p">,</span>
   <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;An Article&quot;</span><span class="p">,</span>
@@ -2187,10 +2187,10 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <h3 id="data-nodes-and-property-inheritance">Data Nodes and Property Inheritance</h3>
 <p>The final node of the <code>metapath</code> will either be a manifest containing inline data or a pointer to a data file. Parent nodes for this manifest will represent "branches" within the <code>collection</code>. Some properties specified by parent nodes are inherited by their children. For instance, the <code>OCR</code> property applied to the <code>RawData</code> node of a <code>collection</code> will apply to all the individual data files classified as <code>RawData</code>. This inheritance can be overriden by including the <code>OCR</code> property in individual data manifests. In the discussion below, inheritable properties are discussed in the context of manifest types where they are most likely to be used. This does not mean that they are unavailable for use in other types of data manifests.</p>
 <h4 id="required-properties_1">REQUIRED properties</h4>
-<p>Data manifests MUST have the following optional properties: <code>name</code>, <code>title</code>, <code>namespace</code>, <code>metapath</code>.</p>
+<p><code>Data</code> manifests MUST have the following optional properties: <code>name</code>, <code>title</code>, <code>namespace</code>, <code>metapath</code>.</p>
 <h4 id="optional-properties_1">OPTIONAL properties</h4>
-<p>The following globally OPTIONAL properties MAY be included in a data manifest: <code>id</code>, <code>_id</code>, <code>authors</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
-<p>A data manifest MAY contain any of the following additional properties:</p>
+<p>The following globally OPTIONAL properties MAY be included in a <code>Data</code> manifest: <code>id</code>, <code>_id</code>, <code>authors</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
+<p>A <code>Data</code> manifest MAY contain any of the following additional properties:</p>
 <h5 id="path"><code>path</code></h5>
 <p>A <code>string</code> indicating the location of the data file. The <code>path</code> value has the following additional constraints:</p>
 <ul>
@@ -2207,7 +2207,7 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <h5 id="encoding"><code>encoding</code></h5>
 <p>A <code>string</code> providing the specific character encoding of the resource's data file. The values should be one of the "Preferred MIME Names" for a <a href="http://www.iana.org/assignments/character-sets/character-sets.xhtml" target="_blank">character encoding registered with IANA</a>). If no value for this key is specified then the default is UTF-8.</p>
 <h3 id="collection-manifests"><code>Collection</code> Manifests</h3>
-<p>WE1S data sets are assumed to be stored in the <code>Corpus</code> database as <code>collections</code>. A <code>collection</code> is defined by a manifest containing metadata. Here is an example:</p>
+<p>WE1S data sets are assumed to be stored in the <code>Corpus</code> database as <code>collections</code>. A <code>collection</code> is defined by a <code>Collection</code> manifest containing metadata. Here is an example:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;name_of_collection&quot;</span><span class="p">,</span>
   <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;Collection Name&quot;</span><span class="p">,</span>
@@ -2228,16 +2228,16 @@ manifest using terms from a controlled vocabulary or some other method of classi
 </ul>
 <p>These subcategories are created by placing child nodes along the <code>collection</code> <code>metapath</code>: <code>Corpus,collection_name,RawData</code>, <code>Corpus,collection_name,ProcessedData</code>, etc.</p>
 <p>It is possible to use the same technique to create sub-branches of data. For instance, <code>Corpus,collection_name,ProcessedData,lower_case</code>, <code>Corpus,collection_name,ProcessedData,stopwords_removed</code>.</p>
-<p>In database storage, <code>collection</code> manifests are simply floating manifests which hold metadata relevant to all manifests and data further along the <code>metapath</code>. When data is exported from the <code>Corpus</code> database, it is assembled into a data package with a <code>datapackage.json</code> manifest in the containing folder and subfolders corresponding to the branches along the <code>metapath</code>. Typically the branch manifest will be placed alongside each subfolder to preserve the metadata relevant to the files in that folder.</p>
-<p>The following sections detail the REQUIRED and OPTIONAL metadata for each type of <code>collection</code> manifest.</p>
+<p>In database storage, <code>collection</code> manifests are simply floating manifests which hold metadata relevant to all manifests and data further along the <code>metapath</code>. When data is exported from the <code>Corpus</code> database, it is typically assembled into a <a href="https://frictionlessdata.io/docs/applying-licenses/" target="_blank">Frictionless Data data package</a> with a <code>datapackage.json</code> manifest in the containing folder and subfolders corresponding to the branches along the <code>metapath</code>. Typically the branch manifest will be placed alongside each subfolder to preserve the metadata relevant to the files in that folder.</p>
+<p>The following sections detail the REQUIRED and OPTIONAL metadata for each type of <code>Collection</code> manifest.</p>
 <h3 id="collection-nodes"><code>Collection</code> Nodes</h3>
 <p>A <code>collection</code> is defined by a manifest that serves as the root node of the collection.</p>
 <h4 id="required-properties_2">REQUIRED Properties</h4>
-<p>Manifests serving as root nodes of <code>collections</code> MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. In addition, <code>collection</code> manifests MUST include <code>created</code>, <code>sources</code>, and <code>contributors</code> properties as detailed below.</p>
+<p>Manifests serving as root nodes of <code>collections</code> MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. In addition, <code>Collection</code> manifests MUST include <code>created</code>, <code>sources</code>, and <code>contributors</code> properties as detailed below.</p>
 <h5 id="created"><code>created</code></h5>
 <p>An <code>array</code> containing the date or dates on which the <code>collection</code> was created. Dates should be given in ISO 8601 date (<code>YYYY-MM-DD</code>) or datetime (e.g. <code>2017-09-16T12:49:05Z</code>) format, wherever sufficient information is known. For further information, see the section on <a href="..#formatting-dates"><strong>Formatting Dates</strong></a>.</p>
 <h5 id="sources"><code>sources</code></h5>
-<p>An <code>array</code> containing the published sources for this collection. The value of <code>sources</code> MUST be an array of <code>objects</code>, typically from the <code>Sources</code> database. Each source object MUST have a <code>title</code> and <code>path</code> properties and MAY have an <code>email</code> property. Example:</p>
+<p>An <code>array</code> containing the published sources for this <code>collection</code>. The value of <code>sources</code> MUST be an array of <code>objects</code>, typically from the <code>Sources</code> database. Each source object MUST have a <code>title</code> and <code>path</code> properties and MAY have an <code>email</code> property. Example:</p>
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;sources&quot;</span><span class="err">:</span> <span class="p">[</span>
   <span class="p">{</span>
     <span class="nt">&quot;title&quot;</span><span class="p">:</span> <span class="s2">&quot;World Bank and OECD&quot;</span><span class="p">,</span>
@@ -2250,7 +2250,7 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <code>email</code>: An email address</p>
 <p>In most cases, the <code>path</code> will point to a manifest in the <code>Sources</code> database, but other possibilities are allowed for projects not using a database to store sources.</p>
 <h5 id="contributors"><code>contributors</code></h5>
-<p>The people or organizations who contributed to the harvesting, downloading, collecting, or assembling the collection. The value of the <code>contributors</code> property MUST be an <code>array</code>. Each entry is a Contributor and MUST be an <code>object</code>. A Contributor MUST have a <code>title</code> property and MAY contain <code>path</code>, <code>email</code>, <code>role</code>, <code>group</code>, and <code>organization</code> properties. An example of the <code>object</code> structure is as follows:</p>
+<p>The people or organizations who contributed to the harvesting, downloading, collecting, or assembling the <code>collection</code>. The value of the <code>contributors</code> property MUST be an <code>array</code>. Each entry is a Contributor and MUST be an <code>object</code>. A Contributor MUST have a <code>title</code> property and MAY contain <code>path</code>, <code>email</code>, <code>role</code>, <code>group</code>, and <code>organization</code> properties. An example of the <code>object</code> structure is as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
   <span class="err">contributors:</span> <span class="err">[</span>
     <span class="err">{</span>
@@ -2267,7 +2267,7 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <li><code>path</code>: A <code>string</code> containing a fully qualified http URL pointing to a relevant location online for the contributor.</li>
 <li><code>email</code>: A <code>string</code> containing an email address.</li>
 <li><code>role</code>: A <code>string</code> describing the role of the contributor. It MUST be one of: <code>author</code>, <code>publisher</code>, <code>maintainer</code>, <code>wrangler</code>, and <code>contributor</code>. Defaults to <code>contributor</code>.</li>
-<li>Note on semantics: use of the <code>author</code> property does not imply that that person was the original creator of the data in the collection - merely that they created the data.</li>
+<li>Note on semantics: use of the <code>author</code> property does not imply that that person was the original creator of the data in the <code>collection</code> - merely that they created the data.</li>
 <li><code>group</code>: A <code>string</code> describing a smaller body of contributors within an <code>organization</code>.</li>
 <li><code>organization</code>: A <code>string</code> describing the organization to which this contributor is affiliated.</li>
 </ul>
@@ -2290,10 +2290,10 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <h5 id="documenttype"><code>documentType</code></h5>
 <p>A <code>string</code> providing a description of the nature of the data accoring to some controlled vocabulary (e.g. "bag of words", "table data). WE1S does not currently have a standard controlled vocabulary for this property.</p>
 <h5 id="relationships"><code>relationships</code></h5>
-<p>An <code>array</code> of <code>strings</code> or <code>objects</code>. The schema below uses the relationships property to describe the data as being a part of another collection ("collection1") combined with material from a third collection ("collection2"). Terms from Dublin Core are used in this example, but it is possible to use other terms from any controlled vocabulary.</p>
+<p>An <code>array</code> of <code>strings</code> or <code>objects</code>. The schema below uses the relationships property to describe the data as being a part of another <code>collection</code> ("collection1") combined with material from a third <code>collectio</code>n ("collection2"). Terms from Dublin Core are used in this example, but it is possible to use other terms from any controlled vocabulary.</p>
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;relationships&quot;</span><span class="err">:</span> <span class="p">[</span>
-  <span class="p">{</span><span class="nt">&quot;isPartOf&quot;</span><span class="p">,</span><span class="nt">&quot;Corpus,collection1,&quot;</span><span class="p">},</span>
-  <span class="p">{</span><span class="nt">&quot;hasPart&quot;</span><span class="p">,</span><span class="nt">&quot;Corpus,collection2&quot;</span><span class="p">}</span>
+  <span class="p">{</span><span class="nt">&quot;isPartOf&quot;</span><span class="p">:</span> <span class="s2">&quot;Corpus,collection1,&quot;</span><span class="p">},</span>
+  <span class="p">{</span><span class="nt">&quot;hasPart&quot;</span><span class="p">:</span> <span class="s2">&quot;Corpus,collection2&quot;</span><span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
 <h5 id="ocr"><code>OCR</code></h5>
@@ -2324,9 +2324,9 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <h3 id="processeddata-nodes"><code>ProcessedData</code> Nodes</h3>
 <p><code>ProcessedData</code> manifests serve as root nodes for all data in the <code>collection</code> that has been transformed or processed after it was collected.</p>
 <h4 id="required-properties_4">REQUIRED Properties</h4>
-<p><code>ProcessedData</code> manifests MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. The <code>metapath</code> MUST be <code>Corpus,collection_name,ProcessedData</code>. In addition, <code>collection</code> manifests MUST include the <code>processes</code> property.</p>
+<p><code>ProcessedData</code> manifests MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. The <code>metapath</code> MUST be <code>Corpus,collection_name,ProcessedData</code>. In addition, <code>ProcessedData</code> manifests MUST include the <code>processes</code> property.</p>
 <h5 id="processes_1"><code>processes</code></h5>
-<p>An <code>array</code> containing processes used in the transformation of the <code>RawData</code> source material. The <code>array</code> MAY contain a list of paths to separate process manifests OR inline descriptions of the processes. In the latter case, the descriptions MUST be <code>objects</code> conforming to the schema described for <code>process</code> manifests detailed below.</p>
+<p>An <code>array</code> containing processes used in the transformation of the <code>RawData</code> source material. The <code>array</code> MAY contain a list of paths to separate process manifests OR inline descriptions of the processes. In the latter case, the descriptions MUST be <code>objects</code> conforming to the schema described for <code>Processes</code> manifests detailed below.</p>
 <h4 id="optional-properties_4">OPTIONAL Properties</h4>
 <p>The following globally OPTIONAL properties MAY be included in a <code>ProcessedData</code> manifest: <code>id</code>, <code>_id</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
 <p>The following additional properties MAY be included in a <code>ProcessedData</code> manifest: <code>format</code>, <code>mediatype</code>, <code>encoding</code>, and <code>documentType</code>. These will be inherited by all data along the <code>ProcessedData</code> metapath unless overridden in individual data manifests.</p>
@@ -2338,7 +2338,7 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <p>The following globally OPTIONAL properties MAY be included in a <code>Metadata</code> manifest: <code>id</code>, <code>_id</code>,<code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
 <p>The following additional properties MAY be included in a <code>Metadata</code> manifest: <code>format</code>, <code>mediatype</code>, <code>encoding</code>, and <code>documentType</code>. These will be inherited by all data along the <code>Metadata</code> metapath unless overridden in individual data manifests.</p>
 <h3 id="outputs-manifests"><code>Outputs</code> Manifests</h3>
-<p><code>Outputs</code> manifests define <code>metapath</code> routes for data and metadata generated through WE1S analytic processes. It is important to note that storing materials along the <code>Outputs</code> metapath makes them a permanent part of the <code>collection</code> or <code>Project</code>.</p>
+<p><code>Outputs</code> manifests define <code>metapath</code> routes for data and metadata generated through WE1S analytic processes. It is important to note that storing materials along the <code>Outputs</code> metapath makes them a permanent part of the <code>collection</code>.</p>
 <h4 id="required-properties_6">REQUIRED Properties</h4>
 <p><code>Outputs</code> manifests MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. The <code>metapath</code> MUST be <code>Corpus,collection_name,Outputs</code>.</p>
 <h4 id="optional-properties_6">OPTIONAL Properties</h4>
@@ -2353,38 +2353,38 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <p>The following additional properties MAY be included in a <code>Related</code> manifest: <code>format</code>, <code>mediatype</code>, <code>encoding</code>, and <code>documentType</code>. These will be inherited by all data along the <code>Related</code> metapath unless overridden in individual data manifests.</p>
 <h3 id="data-packages">Data Packages</h3>
 <p>Frictionless Data data packages are the default export format for data stored in the WE1S database. Every effort has been made to make the WE1S manifest schema compatible with the <a href="https://frictionlessdata.io/specs/data-package/" target="_blank">Frictionless Data specification</a>. The major difference is that Frictionless Data requires that <em>all</em> resources be listed in the <code>resources</code> array found in the <code>datapackage.json</code> file. A shorthand is to include only paths to the higher node manifests (e.g. <code>RawData</code>, <code>ProcessedData</code>) stored in the same directory. An application can then reference data in subfolders using information contained therein. To do this, the application must be able to implement the WE1S schema. Generic data package tools may not be able to locate the data out of the box.</p>
-<h3 id="process-manifests"><code>process</code> Manifests</h3>
-<p>A <code>process</code> manifest documents the ways in which data is modified by analytic or other processes. It is primarily a method of recording the steps a user has taken in executing a workflow and is a means by which those steps can be duplicated. All <code>process</code> manifests are stored in the WE1S <code>Processes</code> database.</p>
+<h3 id="processes-manifests"><code>Processes</code> Manifests</h3>
+<p>A <code>Processes</code> manifest documents the ways in which data is modified by analytic or other processes. It is primarily a method of recording the steps a user has taken in executing a workflow and is a means by which those steps can be duplicated. All <code>Processes</code> manifests are stored in the WE1S <code>Processes</code> database.</p>
 <h4 id="required-properties_8">REQUIRED Properties</h4>
-<p><code>process</code> manifests MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. The <code>metapath</code> MUST begin with <code>Processes,process_name</code>. In addition, <code>process</code> manifests MUST include the following properties:</p>
+<p><code>Processes</code> manifests MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. The <code>metapath</code> MUST begin with <code>Processes</code>. In addition, <code>Processes</code> manifests MUST include the following properties:</p>
 <h5 id="steps"><code>steps</code></h5>
-<p>An <code>array</code> of JSON objects providing each step in the <code>process</code> as described under <strong><code>step</code> Manifests</strong>. Alternatively, the value of <code>steps</code> can be an <code>array</code> of <code>string</code> paths to other <code>process</code> manifests or <code>step</code> manifests.</p>
+<p>An <code>array</code> of JSON objects providing each step in the <code>Processes</code> as described under <strong><code>step</code> Manifests</strong>. Alternatively, the value of <code>steps</code> can be an <code>array</code> of <code>string</code> paths to other <code>Processes</code> manifests or <code>step</code> manifests.</p>
 <h5 id="date_1"><code>date</code></h5>
 <p>An <code>array</code> containing a date or dates indicating when the steps detailed in the manifest were implemented. The value should be a <code>string</code> containing the date in date (<code>YYYY-MM-DD</code>) or datetime (e.g. <code>2017-09-16T12:49:05Z</code>) format. See the <a href="..#formatting-dates"><strong>Formatting Dates</strong></a> section for further details.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
-<p>The <code>date</code> property is only REQUIRED for inline <code>processes</code> in <code>collection</code> manuscripts since it would not make sense for re-usable processes in the <code>Processes</code> database.</p>
+<p>The <code>date</code> property is only REQUIRED for inline processes in <code>Collection</code> manifests since it would not make sense for re-usable processes in the <code>Processes</code> database. <code>namespace</code> and <code>metapath</code> are not required for inline <code>processes</code>.</p>
 </div>
 <h5 id="contributors_1"><code>contributors</code></h5>
-<p>The people or organizations who contributed to the implementing the processes described in the manifest. The value of the <code>contributors</code> property MUST be an <code>array</code>. Each entry is a Contributor and MUST be an <code>object</code>. A Contributor MUST have a <code>title</code> property and MAY contain <code>path</code>, <code>email</code>, <code>role</code>, <code>group</code>, and <code>organization</code> properties. For further discussion of conventions, see the description of the <code>contributors</code> under <code>collection</code> Manifests.</p>
+<p>The people or organizations who contributed to the implementing the processes described in the manifest. The value of the <code>contributors</code> property MUST be an <code>array</code>. Each entry is a Contributor and MUST be an <code>object</code>. A Contributor MUST have a <code>title</code> property and MAY contain <code>path</code>, <code>email</code>, <code>role</code>, <code>group</code>, and <code>organization</code> properties. For further discussion of conventions, see the description of the <code>contributors</code> under <code>Collection</code> manifests.</p>
 <h4 id="optional-properties_8">OPTIONAL Properties</h4>
-<p>The following globally OPTIONAL properties MAY be included in a <code>process</code> manifest: <code>id</code>, <code>_id</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
-<p>The following additional properties MAY be included in a <code>process</code> manifest.</p>
+<p>The following globally OPTIONAL properties MAY be included in a <code>Processes</code> manifest: <code>id</code>, <code>_id</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
+<p>The following additional properties MAY be included in a <code>Processes</code> manifest.</p>
 <h5 id="created_1"><code>created</code></h5>
 <p>A <code>string</code> containing the date when the process was created. The value should be a <code>string</code> containing the date in date (<code>YYYY-MM-DD</code>) or datetime (e.g. <code>2017-09-16T12:49:05Z</code>) format. For further details, see the <a href="..#formatting-dates"><strong>Formatting Dates</strong></a> section.</p>
 <h5 id="source"><code>source</code></h5>
-<p>If the <code>process</code> is dependent on a particular <code>collection</code> or other set of source data, the <code>source</code> property should be used to indicate the location of the data. The value MUST be a <code>string</code> containing a URL, local path, or <code>metapath</code> to the data manifest or files. If it does not include the name of the data's <code>collection</code>, this should be mentioned in the <code>process</code> manifest's <code>description</code>. The <code>source</code> property is unnecessary for inline <code>processes</code> embedded in a <code>collection</code> since the <code>collection</code> is assumed to be the data source.</p>
+<p>If the <code>Processes</code> manifest is dependent on a particular <code>collection</code> or other set of source data, the <code>source</code> property should be used to indicate the location of the data. The value MUST be a <code>string</code> containing a URL, local path, or <code>metapath</code> to the data manifest or files. If it does not include the name of the data's <code>collection</code>, this should be mentioned in the <code>Processes</code> manifest's <code>description</code>. The <code>source</code> property is unnecessary for inline <code>processes</code> embedded in a <code>collection</code> since the <code>collection</code> is assumed to be the data source.</p>
 <h3 id="step-manifests"><code>Step</code> Manifests</h3>
-<p>A <code>step</code> manifest describes the workflow parameters of a single step in a <code>process</code>. It MUST be an <code>object</code>. <code>step</code> manifests MAY be embedded within or referenced from a <code>process</code> manifest.</p>
+<p>A <code>Step</code> manifest describes the workflow parameters of a single step in a <code>process</code>. It MUST be an <code>object</code>. <code>Step</code> manifests MAY be embedded within or referenced from a <code>Processes</code> manifest.</p>
 <h4 id="required-properties_9">REQUIRED Properties</h4>
-<p><code>Step</code> manifests MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. The <code>metapath</code> MUST begin with <code>Processes,process_name,step_name</code>. In addition, <code>step</code> manifests MUST include the following properties:</p>
+<p><code>Step</code> manifests MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. The <code>metapath</code> MUST begin with <code>Processes,process_name,Steps</code>. In addition, <code>Step</code> manifests MUST include the following properties:</p>
 <h5 id="description_1"><code>description</code></h5>
-<p>A <code>string</code> describing the processing step. Whereas <code>description</code> is OPTIONAL for many manifests, it is required for a <code>step</code> manifest.</p>
-<h5 id="type"><code>type</code></h5>
+<p>A <code>string</code> describing the processing step. Whereas <code>description</code> is OPTIONAL for many manifests, it is required for a <code>Step</code> manifest.</p>
+<h5 id="implementation"><code>implementation</code></h5>
 <p>A <code>string</code> describing the means by which the processing step was implemented. There is currently no controlled vocabulary for this property. Possible values are "script", "tool", or "API".</p>
 <h4 id="optional-properties_9">OPTIONAL Properties</h4>
-<p>The following globally OPTIONAL properties MAY be included in a <code>step</code> manifest: <code>id</code>, <code>_id</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
-<p>The following additional properties MAY be included in a <code>step</code> manifest.</p>
+<p>The following globally OPTIONAL properties MAY be included in a <code>Step</code> manifest: <code>id</code>, <code>_id</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
+<p>The following additional properties MAY be included in a <code>Step</code> manifest.</p>
 <h5 id="path_1"><code>path</code></h5>
 <p>A <code>string</code> providing a reference to the location of the tool or script. If it is a tool, this can be a URL to the tool's website. If the step involves a script, the reference should be a URL to the script's repository or a <code>metapath</code> to the script's manifest.</p>
 <h5 id="options"><code>options</code></h5>
@@ -2400,11 +2400,11 @@ manifest using terms from a controlled vocabulary or some other method of classi
 </code></pre></div>
 <p>for an API query with further arguments for the query terms.</p>
 <h5 id="outputs"><code>outputs</code></h5>
-<p>An <code>array</code> of paths to the root node where all the <code>process</code>'s outputs are stored.</p>
+<p>An <code>array</code> of paths to the root node where all the <code>step</code>'s outputs are stored.</p>
 <h5 id="instructions"><code>instructions</code></h5>
-<p>A <code>string</code> containing instructions for implementing the <code>process</code>. Although instructions MAY also be put in the <code>notes</code> and <code>description</code> fields, an explicit <code>instructions</code> field may be helpful in some instances.</p>
-<h3 id="script-manifests"><code>Script</code> Manifests</h3>
-<p><code>script</code> manifests include information about external software and tools, as well as scripts authored by WE1S staff. <code>script</code> manifests make extensive use of the <code>metapath</code> property to create branching structures for standard types of scripted procedures:</p>
+<p>A <code>string</code> containing instructions for implementing the <code>step</code>. Although instructions MAY also be put in the <code>notes</code> and <code>description</code> fields, an explicit <code>instructions</code> field may be helpful in some instances.</p>
+<h3 id="scripts-manifests"><code>Scripts</code> Manifests</h3>
+<p><code>Scripts</code> manifests include information about external software and tools, as well as scripts authored by WE1S staff. <code>Scripts</code> manifests make extensive use of the <code>metapath</code> property to create branching structures for standard types of scripted procedures:</p>
 <ul>
 <li>collecting</li>
 <li>preprocessing</li>
@@ -2412,9 +2412,9 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <li>visualization</li>
 </ul>
 <p>Whilst these branches are expected in WE1S project, others may be used as necessary.</p>
-<p>Each branch MAY have child branches for different tools. However, WE1S expects sub-branches dividing scripts by language (Python and R in the examples below). Hence a possible <code>metapath</code> would be <code>Scripts,preprocessing,python,strip_tags</code>. If the manifest is for a tool or external program, the last item in the branch will be the manifest containing metadata about the tool or program. If it is a WE1S script, the manifest MAY additionally contain the code of the script itself inline.</p>
+<p>Each branch MAY have child branches for different tools. However, WE1S expects sub-branches dividing scripts by language. Hence a possible <code>metapath</code> would be <code>Scripts,preprocessing,python,strip_tags</code>. If the manifest is for a tool or external program, the last item in the branch will be the manifest containing metadata about the tool or program. If it is a WE1S script, the manifest MAY additionally contain the code of the script itself inline.</p>
 <h4 id="required-properties_10">REQUIRED Properties</h4>
-<p><code>Script</code> manifests MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. The <code>metapath</code> MUST begin with <code>Scripts</code>. In addition, <code>script</code> manifests MUST include the following properties:</p>
+<p><code>Script</code> manifests MUST include the following properties: <code>name</code>, <code>title</code>, <code>namespace</code>, and <code>metapath</code>. The <code>metapath</code> MUST begin with <code>Scripts</code>. In addition, <code>Script</code> manifests MUST include the following properties:</p>
 <h5 id="contributors_2"><code>contributors</code></h5>
 <p>The people or organizations who contributed to the creation of the tool or script. The value of the <code>contributors</code> property MUST be an <code>array</code>. Each entry is a Contributor and MUST be an <code>object</code>. A Contributor MUST have a <code>title</code> property and MAY contain <code>path</code>, <code>email</code>, <code>role</code> and <code>organization</code> properties. An example of the <code>object</code> structure is as follows:</p>
 <div class="highlight"><pre><span></span><code><span class="p">{</span>
@@ -2437,8 +2437,8 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <li><code>organization</code>: A <code>string</code> describing the organization this to which this contributor is affiliated.</li>
 </ul>
 <h4 id="optional-properties_10">OPTIONAL Properties</h4>
-<p>The following globally OPTIONAL properties MAY be included in a <code>script</code> manifest: <code>id</code>, <code>_id</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
-<p>The following additional properties MAY be included in a <code>script</code> manifest.</p>
+<p>The following globally OPTIONAL properties MAY be included in a <code>Scripts</code> manifest: <code>id</code>, <code>_id</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>.</p>
+<p>The following additional properties MAY be included in a <code>Scripts</code> manifest.</p>
 <h5 id="created_2"><code>created</code></h5>
 <p>The date when the script was authored or last updated. The value should be a <code>string</code> containing the date in date (<code>YYYY-MM-DD</code>) or datetime (e.g. <code>2017-09-16T12:49:05Z</code>) format. See <a href="..#formatting-dates"><strong>Formatting Dates</strong></a> for further information on how to represent the value of the <code>created</code> property.</p>
 <h5 id="path_2"><code>path</code></h5>
@@ -2499,19 +2499,19 @@ manifest using terms from a controlled vocabulary or some other method of classi
 <li><code>start</code> and <code>end</code> values may also be expressed as <code>objects</code> containing <code>text</code> and <code>format</code> properties.</li>
 </ul>
 <h3 id="we1s-projects">WE1S Projects</h3>
-<p>A project is a containerised set of manifests and data that can be stored and manipulated outside the database. They may in turn be stored in a separate <code>Projects</code> database for future reference.</p>
-<p>In form, a project is a Frictionless Data data package built from the <code>metapath</code> contents of its resources. It consists of the following:</p>
+<p>A "project" is a containerised set of manifests and data that can be stored and manipulated outside the database. They may in turn be stored in a separate <code>Projects</code> database for future reference.</p>
+<p>In form, a project is a <a href="https://frictionlessdata.io" target="_blank">Frictionless Data</a> data package built from the <code>metapath</code> contents of its resources. It consists of the following:</p>
 <ul>
 <li>A folder containing a <code>datapackage.json</code> file with the following limitation: the <code>resources</code> property must contain the paths <code>Sources</code>, <code>Corpus</code>, <code>Processes</code>, and <code>Scripts</code> AND <em>only</em> these paths. The folder should also contain subfolders with these same names.</li>
-<li>Each subfolder SHOULD contain at least one manifest file. For instance, the <code>Corpus</code> folder might contain a <code>collection</code> manifest called <code>new_york_times.json</code>. This SHOULD have a corresponding folder called with the same name minus the file extension (e.g. <code>new_york_times</code>).</li>
+<li>Each subfolder SHOULD contain at least one manifest file. For instance, the <code>Corpus</code> folder might contain a <code>Collection</code> manifest called <code>new_york_times.json</code>. This SHOULD have a corresponding folder called with the same name minus the file extension (e.g. <code>new_york_times</code>).</li>
 <li>Additional subfolders and manifests should be created at the next level of the file hierarchy for each resource added to the data package. For instance, if there is a <code>Corpus,new_york_times,RawData</code> manifest added, the data package folder should contain a <code>RawData.json</code> and a <code>Corpus/new_york_times/RawData</code> folder inside the <code>Corpus/new_york_times</code> folder.</li>
 </ul>
 <p>Note that this does not exactly follow the Frictionless Data specificiation because not all resources are listed in the <code>datapackage.json</code> file. However, it is possible to create a complete list of resources programmatically by recursively listing the contents of the folders or querying properties in the manifests contained therein.</p>
 <h4 id="project-manifests">Project Manifests</h4>
-<p>The following REQUIRED properties MUST be included in every <code>project</code> manifest: <code>name</code>, <code>title</code>, <code>namespace</code>, <code>content</code>, <code>contributors</code>, <code>created</code>.</p>
+<p>The following REQUIRED properties MUST be included in every <code>Projects</code> manifest: <code>name</code>, <code>title</code>, <code>namespace</code>, <code>content</code>, <code>contributors</code>, <code>created</code>.</p>
 <p>The <code>created</code> and <code>contributors</code> properties are the same as found in <code>collection</code> manifests. The <code>content</code> property MUST contain a <a href="http://bsonspec.org/" target="_blank">BSON-formatted</a> <code>.zip</code> archive, the name of which must the same value as the <code>name</code> property. The other properties are globally REQUIRED properties.</p>
-<p>In addition, <code>project</code> manifests MAY contain the following OPTIONAL properties: <code>id</code>, <code>_id</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>, <code>webpage</code>, <code>contentType</code>, <code>citation</code>. The last three are the same as found in <code>source</code> manifests.</p>
-<p>In general, <code>project</code> resources can be reconstructed by iterating through the project's folders and subfolders. However, for some applications this can be an inconvenience, especially if the project is archived as a zip file. In these cases, the <code>project</code> manifest MAY contain a <code>resources</code> property. This MUST be an array of strings or objects. By default, the array will contain strings corresponding to the paths to the individual resources, whether within the project's file structure or on the internet:</p>
+<p>In addition, <code>Projects</code> manifests MAY contain the following OPTIONAL properties: <code>id</code>, <code>_id</code>, <code>description</code>, <code>version</code>, <code>keyword</code>, <code>image</code>, <code>shortTitle</code>, <code>label</code>, <code>notes</code>, <code>updated</code>, <code>webpage</code>, <code>contentType</code>, <code>citation</code>. The last three are the same as found in <code>Sources</code> manifests.</p>
+<p>In general, project resources can be reconstructed by iterating through the project's folders and subfolders. However, for some applications this can be an inconvenience, especially if the project is archived as a zip file. In these cases, the <code>Projects</code> manifest MAY contain a <code>resources</code> property. This MUST be an array of strings or objects. By default, the array will contain strings corresponding to the paths to the individual resources, whether within the project's file structure or on the internet:</p>
 <div class="highlight"><pre><span></span><code><span class="s2">&quot;resources&quot;</span><span class="err">:</span> <span class="p">[</span>
   <span class="s2">&quot;Corpus/collection_name/RawData&quot;</span><span class="p">,</span>
   <span class="s2">&quot;http://example.com/resource-path.csv&quot;</span>
@@ -2536,7 +2536,6 @@ manifest using terms from a controlled vocabulary or some other method of classi
   <span class="p">}</span>
 <span class="p">]</span>
 </code></pre></div>
-<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.41 15.41L12 10.83l4.59 4.58L18 14l-6-6-6 6 1.41 1.41z"/></svg></span></p>
                 
               
               

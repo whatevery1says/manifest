@@ -1,3 +1,7 @@
+h5 {
+  text-transform: none !important;
+}
+
 [data-md-color-scheme="we1s"] {
     --md-primary-fg-color:        #d65050;;
     --md-primary-fg-color--light: #ECB7B7;
