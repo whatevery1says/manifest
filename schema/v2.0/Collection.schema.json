@@ -1,0 +1,365 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "contributor": {
+      "properties": {
+        "email": {
+          "$ref": "#/definitions/email"
+        },
+        "organization": {
+          "description": "An organizational affiliation for this contributor.",
+          "title": "Organization",
+          "type": "string"
+        },
+        "path": {
+          "$ref": "#/definitions/path"
+        },
+        "role": {
+          "allOf": [{
+            "$ref": "#/definitions/role"
+          }],
+          "default": "contributor",
+          "description": "The primary role played this contributor."
+        },
+        "title": {
+          "$ref": "#/definitions/title"
+        }
+      },
+      "required": [
+        "title"
+      ],
+      "title": "Contributor",
+      "type": "object"
+    },
+    "contributors": {
+      "description": "The contributors to this descriptor.",
+      "items": {
+        "$ref": "#/definitions/contributor"
+      },
+      "minItems": 1,
+      "title": "Contributors",
+      "type": "array"
+    },
+    "date": {
+      "anyOf": [{
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/daterange"
+        }
+      ],
+      "description": "A date or daterange in date or date-time format.",
+      "title": "Date"
+    },
+    "daterange": {
+      "properties": {
+        "end": {
+          "anyOf": [{
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            }
+          ],
+          "title": "End"
+        },
+        "start": {
+          "anyOf": [{
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            }
+          ],
+          "title": "Start"
+        }
+      },
+      "required": [
+        "start"
+      ],
+      "title": "Date Range",
+      "description": "A range of dates beginning with a start date and optionally ending in an end date.",
+      "type": "object"
+    },
+    "description": {
+      "description": "A text description. Markdown is encouraged.",
+      "title": "Description",
+      "type": "string"
+    },
+    "email": {
+      "description": "An email address.",
+      "format": "email",
+      "title": "Email",
+      "type": "string"
+    },
+    "id": {
+      "description": "A property reserved for globally unique identifiers. Examples of identifiers that are unique include UUIDs and DOIs.",
+      "title": "Id",
+      "type": "string"
+    },
+    "image": {
+      "description": "A path to an image used to represent this descriptor.",
+      "title": "Image",
+      "type": "string"
+    },
+    "keywords": {
+      "description": "A list of keywords that describe this descriptor.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Keywords",
+      "type": "array"
+    },
+    "label": {
+      "description": "A label for this descriptor, often used for graphs.",
+      "title": "Label",
+      "type": "string"
+    },
+    "metapath": {
+      "title": "Metapath",
+      "description": "An identifier string. Alphanumeric characters with `.`, `_`, `-` and `,` are allowed.",
+      "type": "string",
+      "pattern": "^Corpus$",
+      "context": "When followed by a resource `name`, the metapath should represent something like a filepath to the resource. Commas can be transformed to `/` in applications."
+    },
+    "name": {
+      "description": "An identifier string. Lower case characters with `.`, `_`, and `-` are allowed.",
+      "pattern": "^([-a-z0-9._])+$",
+      "title": "Name",
+      "type": "string"
+    },
+    "namespace": {
+      "description": "The version of the WE1S schema used to produce this manifest.",
+      "pattern": "we1sv2.0",
+      "title": "Namespace",
+      "type": "string"
+    },
+    "notes": {
+      "description": "A list of notes that describe this resource.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Notes",
+      "type": "array"
+    },
+    "path": {
+      "description": "A fully qualified URL, or a POSIX file path.",
+      "title": "Path",
+      "type": "string"
+    },
+    "processes": {
+      "title": "Processes",
+      "description": "A list of steps used to collect the data.",
+      "steps": {
+        "$ref": "#/definitions/steps"
+      }
+    },
+    "queryTerms": {
+      "description": "A list providing keywords used to define the scope of the collection (typically used in an API query to collect the data).",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "QueryTerms",
+      "type": "array"
+    },
+    "role": {
+      "description": "A role assigned to a contributor.",
+      "enum": [
+        "publisher",
+        "author",
+        "maintainer",
+        "wrangler",
+        "contributor"
+      ],
+      "title": "Role"
+    },
+    "shortTitle": {
+      "title": "ShortTitle",
+      "description": "A short or alternative title for the resource.",
+      "type": "string"
+    },
+    "singleSource": {
+      "properties": {
+        "title": {
+          "$ref": "#/definitions/title"
+        },
+        "path": {
+          "$ref": "#/definitions/path"
+        },
+        "email": {
+          "$ref": "#/definitions/email"
+        }
+      },
+      "required": [
+        "title",
+        "path"
+      ],
+      "title": "Contributor",
+      "type": "object"
+    },
+    "sources": {
+      "description": "A list of the published sources for a collection.",
+      "items": {
+        "$ref": "#/definitions/singleSource"
+      },
+      "minItems": 1,
+      "title": "Sources",
+      "type": "array"
+    },
+    "step": {
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "implementation": {
+          "title": "Implementation",
+          "type": "string"
+        },
+        "instructions": {
+          "title": "Instructions",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "type": "object"
+          },
+          "minItems": 1,
+          "title": "Options",
+          "type": "array"
+        },
+        "outputs": {
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "title": "Outputs",
+          "type": "array"
+        },
+        "path": {
+          "$ref": "#/definitions/date"
+        }
+      },
+      "title": "Step",
+      "type": "object"
+    },
+    "steps": {
+      "description": "A list of steps in a process.",
+      "items": {
+        "anyOf": [{
+            "type": "object"
+          },
+          {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          {
+            "$ref": "#/definitions/step"
+          }
+        ]
+      },
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    },
+    "title": {
+      "title": "Title",
+      "description": "TA human-readable title for the resource.",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "description": "The version number of a record. Semantic versioning is encouraged. See https://semver.org/.",
+      "type": "string"
+    },
+    "workstation": {
+      "title": "Workstation",
+      "description": "The hardware or server environment used to collect data.",
+      "type": "string"
+    },
+    "properties": {
+      "contributors": {
+        "$ref": "#/definitions/contributors"
+      },
+      "created": {
+        "description": "The date when the resource was created.",
+        "$ref": "#/definitions/date"
+      },
+      "description": {
+        "$ref": "#/definitions/description"
+      },
+      "id": {
+        "$ref": "#/definitions/id"
+      },
+      "image": {
+        "$ref": "#/definitions/image"
+      },
+      "keywords": {
+        "$ref": "#/definitions/keywords"
+      },
+      "label": {
+        "$ref": "#/definitions/label"
+      },
+      "metapath": {
+        "$ref": "#/definitions/metapath"
+      },
+      "name": {
+        "$ref": "#/definitions/name"
+      },
+      "namespace": {
+        "$ref": "#/definitions/namespace"
+      },
+      "notes": {
+        "$ref": "#/definitions/notes"
+      },
+      "processes": {
+        "$ref": "#/definitions/processes"
+      },
+      "queryTerms": {
+        "$ref": "#/definitions/queryTerms"
+      },
+      "shortTitle": {
+        "$ref": "#/definitions/shortTitle"
+      },
+      "sources": {
+        "$ref": "#/definitions/sources"
+      },
+      "title": {
+        "$ref": "#/definitions/title"
+      },
+      "updated": {
+        "description": "The date when the resource was last updated.",
+        "$ref": "#/definitions/date"
+      },
+      "version": {
+        "$ref": "#/definitions/version"
+      },
+      "workstation": {
+        "$ref": "#/definitions/workstation"
+      }
+    },
+    "required": [
+      "name",
+      "namespace",
+      "metapath",
+      "title"
+    ],
+    "title": "Collection",
+    "type": "object"
+  }
+}

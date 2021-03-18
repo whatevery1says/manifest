@@ -1,0 +1,311 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "date": {
+      "anyOf": [{
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/daterange"
+        }
+      ],
+      "description": "A date or daterange in date or date-time format.",
+      "title": "Date"
+    },
+    "daterange": {
+      "properties": {
+        "end": {
+          "anyOf": [{
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            }
+          ],
+          "title": "End"
+        },
+        "start": {
+          "anyOf": [{
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            }
+          ],
+          "title": "Start"
+        }
+      },
+      "required": [
+        "start"
+      ],
+      "title": "Date Range",
+      "description": "A range of dates beginning with a start date and optionally ending in an end date.",
+      "type": "object"
+    },
+    "description": {
+      "description": "A text description. Markdown is encouraged.",
+      "title": "Description",
+      "type": "string"
+    },
+    "documentType": {
+      "title": "Document Type",
+      "description": "A description of the nature or genre of the data according to some controlled vocabulary.",
+      "type": "string"
+    },
+    "encoding": {
+      "description": "The file encoding of this resource.",
+      "title": "Encoding",
+      "type": "string"
+    },
+    "format": {
+      "description": "The file format of this resource.",
+      "title": "Format",
+      "type": "string"
+    },
+    "id": {
+      "description": "A property reserved for globally unique identifiers. Examples of identifiers that are unique include UUIDs and DOIs.",
+      "title": "Id",
+      "type": "string"
+    },
+    "image": {
+      "description": "A path to an image used to represent this descriptor.",
+      "title": "Image",
+      "type": "string"
+    },
+    "keywords": {
+      "description": "A list of keywords that describe this descriptor.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Keywords",
+      "type": "array"
+    },
+    "label": {
+      "description": "A label for this descriptor, often used for graphs.",
+      "title": "Label",
+      "type": "string"
+    },
+    "licenses": {
+      "title": "Licenses",
+      "description": "The license(s) under which this resource is published.",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "title": "License",
+        "description": "A license for this resource.",
+        "type": "object",
+        "properties": {
+          "name": {
+            "title": "Open Definition license identifier",
+            "description": "MUST be an Open Definition license identifier, see http://licenses.opendefinition.org/",
+            "type": "string",
+            "pattern": "^([-a-zA-Z0-9._])+$"
+          },
+          "path": {
+            "$ref": "#/definitions/path"
+          },
+          "title": {
+            "$ref": "#/definitions/title"
+          }
+        }
+      },
+      "context": "Use of this property does not imply that the person was the original creator of, or a contributor to, the data in the descriptor, but refers to the composition of the descriptor itself."
+    },
+    "mediatype": {
+      "description": "The media type of this resource. Can be any valid media type listed with [IANA](https://www.iana.org/assignments/media-types/media-types.xhtml).",
+      "pattern": "^(.+)/(.+)$",
+      "title": "Mediatype",
+      "type": "string"
+    },
+    "metapath": {
+      "title": "Metapath",
+      "description": "An identifier string. Alphanumeric characters with `.`, `_`, `-` and `,` are allowed.",
+      "type": "string",
+      "pattern": "^Corpus,([-a-zA-Z0-9._,])+,ProcessedData$",
+      "context": "When followed by a resource `name`, the metapath should represent something like a filepath to the resource. Commas can be transformed to `/` in applications."
+    },
+    "name": {
+      "description": "An identifier string. Lower case characters with `.`, `_`, and `-` are allowed.",
+      "pattern": "^([-a-z0-9._])+$",
+      "title": "Name",
+      "type": "string"
+    },
+    "namespace": {
+      "description": "The version of the WE1S schema used to produce this manifest.",
+      "pattern": "we1sv2.0",
+      "title": "Namespace",
+      "type": "string"
+    },
+    "notes": {
+      "description": "A list of notes that describe this resource.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Notes",
+      "type": "array"
+    },
+    "path": {
+      "description": "A fully qualified URL, or a POSIX file path.",
+      "title": "Path",
+      "type": "string"
+    },
+    "processes": {
+      "title": "Processes",
+      "description": "A list of steps used to collect the data.",
+      "steps": {
+        "$ref": "#/definitions/steps"
+      }
+    },
+    "shortTitle": {
+      "title": "ShortTitle",
+      "description": "A short or alternative title for the resource.",
+      "type": "string"
+    },
+    "step": {
+      "properties": {
+        "description": {
+          "title": "Description",
+          "type": "string"
+        },
+        "implementation": {
+          "title": "Implementation",
+          "type": "string"
+        },
+        "instructions": {
+          "title": "Instructions",
+          "type": "string"
+        },
+        "options": {
+          "items": {
+            "type": "object"
+          },
+          "minItems": 1,
+          "title": "Options",
+          "type": "array"
+        },
+        "outputs": {
+          "items": {
+            "$ref": "#/definitions/path"
+          },
+          "minItems": 1,
+          "title": "Outputs",
+          "type": "array"
+        },
+        "path": {
+          "$ref": "#/definitions/date"
+        }
+      },
+      "title": "Step",
+      "type": "object"
+    },
+    "steps": {
+      "description": "A list of steps in a process.",
+      "items": {
+        "anyOf": [
+          {
+            "type": "object"
+          },
+          {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array"
+          },
+          {
+            "$ref": "#/definitions/step"
+          }
+        ]
+      },
+      "minItems": 1,
+      "title": "Steps",
+      "type": "array"
+    },
+    "title": {
+      "title": "Title",
+      "description": "TA human-readable title for the resource.",
+      "type": "string"
+    },
+    "version": {
+      "title": "Version",
+      "description": "The version number of a record. Semantic versioning is encouraged. See https://semver.org/.",
+      "type": "string"
+    },
+    "properties": {
+      "description": {
+        "$ref": "#/definitions/description"
+      },
+      "encoding": {
+        "$ref": "#/definitions/encoding"
+      },
+      "format": {
+        "$ref": "#/definitions/format"
+      },
+      "id": {
+        "$ref": "#/definitions/id"
+      },
+      "image": {
+        "$ref": "#/definitions/image"
+      },
+      "keywords": {
+        "$ref": "#/definitions/keywords"
+      },
+      "label": {
+        "$ref": "#/definitions/label"
+      },
+      "mediatype": {
+        "$ref": "#/definitions/mediatype"
+      },
+      "metapath": {
+        "$ref": "#/definitions/metapath"
+      },
+      "name": {
+        "$ref": "#/definitions/name"
+      },
+      "namespace": {
+        "$ref": "#/definitions/namespace"
+      },
+      "notes": {
+        "$ref": "#/definitions/notes"
+      },
+      "path": {
+        "$ref": "#/definitions/path"
+      },
+      "processes": {
+        "$ref": "#/definitions/processes"
+      },
+      "shortTitle": {
+        "$ref": "#/definitions/shortTitle"
+      },
+      "title": {
+        "$ref": "#/definitions/title"
+      },
+      "updated": {
+        "$ref": "#/definitions/date"
+      },
+      "version": {
+        "$ref": "#/definitions/version"
+      }
+    },
+    "required": [
+      "name",
+      "namespace",
+      "metapath",
+      "title",
+      "processes"
+    ],
+    "title": "ProcessedData",
+    "type": "object"
+  }
+}

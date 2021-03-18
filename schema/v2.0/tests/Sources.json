@@ -1,0 +1,31 @@
+{
+    "name": "test_source",
+    "namespace": "we1sv2.0",
+    "metapath":  "Sources",
+    "title": "Test Sources Title",
+    "description": "Test Sources Description",
+    "id": "1234",
+    "_id": "1234",
+    "image": "image.png",
+    "keywords": ["a", "b", "c"],
+    "label": "TST",
+    "notes": ["note1", "note2", "note3"],
+    "shortTitle": "TST",
+    "updated": {
+      "start": "2020-01-01T01:01:01Z"
+    },
+    "version": "1.0.0",
+    "publisher": "Me",
+    "authors": [{
+      "title": "Test Author"
+    }],
+    "date": "2020-01-01",
+    "edition": "2nd",
+    "contentType": "newspaper",
+    "country": "US",
+    "language": ["aar", "eng"],
+    "citation": {
+      "author": "Test Citation Author",
+      "title": "_Test Citation Title_"
+    }
+}

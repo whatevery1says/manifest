@@ -1,0 +1,23 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "test_outputs",
+  "namespace": "we1sv2.0",
+  "metapath": "Corpus,collection,Outputs",
+  "title": "Test Outputs Title",
+  "description": "Test Outputs Description",
+  "id": "1234",
+  "_id": "1234",
+  "image": "image.png",
+  "keywords": ["a", "b", "c"],
+  "label": "TOL",
+  "notes": ["note1", "note2", "note3"],
+  "shortTitle": "TOT",
+  "updated": {
+    "start": "2020-01-01T01:01:01Z"
+  },
+  "version": "1.0.0",
+  "date": "2020-01-01",
+  "encoding": "UTF-8",
+  "format": "docx",
+  "mediatype": "application/docx"
+}

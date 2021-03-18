@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "test_collection",
+  "namespace": "we1sv2.0",
+  "metapath": "Corpus",
+  "title": "Test Collections Title",
+  "description": "Test Collections Description",
+  "id": "1234",
+  "_id": "1234",
+  "image": "image.png",
+  "keywords": ["a", "b", "c"],
+  "label": "TCT",
+  "notes": ["note1", "note2", "note3"],
+  "shortTitle": "TCT",
+  "updated": {
+    "start": "2020-01-01T01:01:01Z"
+  },
+  "version": "1.0.0",
+  "date": "2020-01-01",
+  "contributors": [{
+    "title": "Test Contributor Name",
+    "email": "test@test.com",
+    "organisation": "Test.edu",
+    "path": "x/y/z",
+    "role": "contributor"
+  }],
+  "created": "2020-01-01",
+  "processes": [],
+  "queryTerms": ["a", "b", "c"],
+  "sources": "",
+  "workstation": "Windows 10"
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "test_step",
+  "namespace": "we1sv2.0",
+  "metapath": "Processes,test_process",
+  "title": "Test Steps Title",
+  "description": "Test Steps Description",
+  "implementation": "script",
+  "id": "1234",
+  "_id": "1234",
+  "image": "image.png",
+  "keywords": ["a", "b", "c"],
+  "label": "TSL",
+  "notes": ["note1", "note2", "note3"],
+  "shortTitle": "TST",
+  "updated": "2020-01-01T01:01:01Z",
+  "version": "1.0.0",
+  "instructions": "Test instructions",
+  "path": "x/y/z",
+  "options": [{
+    "settings.cfg": "Sample config file:..."
+  }],
+  "outputs": ["x/y/z"]
+}

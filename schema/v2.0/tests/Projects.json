@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "test_projects",
+  "namespace": "we1sv2.0",
+  "metapath": "Projects",
+  "title": "Test Project Title",
+  "description": "Test Project Description",
+  "id": "1234",
+  "_id": "1234",
+  "image": "image.png",
+  "keywords": ["a", "b", "c"],
+  "label": "TPL",
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
+  "notes": ["note1", "note2", "note3"],
+  "shortTitle": "TPT",
+  "updated": {
+    "start": "2020-01-01T01:01:01Z"
+  },
+  "version": "1.0.0",
+  "date": "2020-01-01",
+  "citation": {
+    "author": "Test Citation Author",
+    "title": "_Test Citation Title_"
+  },
+  "content": "zip-file",
+  "created": "2020-01-01",
+  "contributors": [{
+    "title": "Test Contributor Name",
+    "email": "test@test.com",
+    "organisation": "Test.edu",
+    "path": "x/y/z",
+    "role": "contributor"
+  }],
+  "contentType": "newspapers",
+  "resources": [
+    "Corpus/collection_name/RawData",
+    "http://example.com/resource-path.csv"
+  ],
+  "webpage": "http://test.com"
+}

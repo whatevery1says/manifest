@@ -1,0 +1,37 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "test_processed_data",
+  "namespace": "we1sv2.0",
+  "metapath": "Corpus,collection,ProcessedData",
+  "title": "Test ProcessedData Title",
+  "description": "Test ProcessedData Description",
+  "id": "1234",
+  "_id": "1234",
+  "image": "image.png",
+  "keywords": ["a", "b", "c"],
+  "label": "TPDL",
+  "notes": ["note1", "note2", "note3"],
+  "shortTitle": "TPDT",
+  "updated": {
+    "start": "2020-01-01T01:01:01Z"
+  },
+  "version": "1.0.0",
+  "date": "2020-01-01",
+  "encoding": "UTF-8",
+  "format": "txt",
+  "mediatype": "text/plain",
+  "documenType": "newspapers",
+  "processes": {
+    "steps": [{
+      "description": "Step description.",
+      "implementation": "Step implementation.",
+      "instructions": "Step instructions."
+    }],
+    "options": [{
+        "config1": "Configuration option1",
+        "config2": "Configuration option2"
+    }],
+    "outputs": ["http://test.edu"],
+    "path": "x/y/z"
+  }
+}

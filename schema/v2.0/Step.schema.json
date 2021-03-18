@@ -1,0 +1,237 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "date": {
+      "anyOf": [{
+          "format": "date",
+          "type": "string"
+        },
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "$ref": "#/definitions/daterange"
+        }
+      ],
+      "description": "A date or daterange in date or date-time format.",
+      "title": "Date"
+    },
+    "daterange": {
+      "properties": {
+        "end": {
+          "anyOf": [{
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            }
+          ],
+          "title": "End"
+        },
+        "start": {
+          "anyOf": [{
+              "format": "date",
+              "type": "string"
+            },
+            {
+              "format": "date-time",
+              "type": "string"
+            }
+          ],
+          "title": "Start"
+        }
+      },
+      "required": [
+        "start"
+      ],
+      "title": "Date Range",
+      "description": "A range of dates beginning with a start date and optionally ending in an end date.",
+      "type": "object"
+    },
+    "description": {
+      "description": "A text description. Markdown is encouraged.",
+      "title": "Description",
+      "type": "string"
+    },
+    "id": {
+      "description": "A property reserved for globally unique identifiers. Examples of identifiers that are unique include UUIDs and DOIs.",
+      "title": "Id",
+      "type": "string"
+    },
+    "image": {
+      "description": "A path to an image used to represent this descriptor.",
+      "title": "Image",
+      "type": "string"
+    },
+    "implementation": {
+      "title": "Implementation",
+      "description": "A description of the means by which the processing step was implemented.",
+      "type": "string"
+    },
+    "instructions": {
+      "title": "Instructions",
+      "description": "A set of instructions for implementing a process. Markdown is encouraged.",
+      "type": "string"
+    },
+    "keywords": {
+      "description": "A list of keywords that describe this descriptor.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Keywords",
+      "type": "array"
+    },
+    "label": {
+      "description": "A label for this descriptor, often used for graphs.",
+      "title": "Label",
+      "type": "string"
+    },
+    "metapath": {
+      "title": "Metapath",
+      "description": "An identifier string. Alphanumeric characters with `.`, `_`, `-` and `,` are allowed.",
+      "type": "string",
+      "pattern": "^Processes,([-a-zA-Z0-9._,])+$",
+      "context": "When followed by a resource `name`, the metapath should represent something like a filepath to the resource. Commas can be transformed to `/` in applications."
+    },
+    "name": {
+      "description": "An identifier string. Lower case characters with `.`, `_`, and `-` are allowed.",
+      "pattern": "^([-a-z0-9._])+$",
+      "title": "Name",
+      "type": "string"
+    },
+    "namespace": {
+      "description": "The version of the WE1S schema used to produce this manifest.",
+      "pattern": "we1sv2.0",
+      "title": "Namespace",
+      "type": "string"
+    },
+    "notes": {
+      "description": "A list of notes that describe this resource.",
+      "items": {
+        "type": "string"
+      },
+      "minItems": 1,
+      "title": "Notes",
+      "type": "array"
+    },
+    "options": {
+      "description": "A list of containing information about the configuration of the tool or script used in the step.",
+      "items": {
+        "anyOf": [{
+            "type": "string"
+          },
+          {
+            "type": "object"
+          }
+        ]
+      },
+      "minItems": 1,
+      "title": "Notes",
+      "type": "array"
+    },
+    "outputs": {
+      "description": "A list of paths to the root node where all the process's outputs are stored.",
+      "title": "Outputs",
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/definitions/path"
+      }
+    },
+    "path": {
+      "description": "A fully qualified URL, or a POSIX file path.",
+      "title": "Path",
+      "type": "string"
+    },
+    "shortTitle": {
+      "description": "The short title of a record (an alternative value to that given for `title`).",
+      "title": "ShortTitle",
+      "type": "string"
+    },
+    "title": {
+      "title": "Title"
+    },
+    "updated": {
+      "allOf": [{
+        "$ref": "#/definitions/date"
+      }],
+      "description": "The date on which this descriptor was updated.",
+      "title": "Updated"
+    },
+    "version": {
+      "description": "The version of this resource. Semantic versioning is encouraged.",
+      "title": "Version",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "description": {
+      "$ref": "#/definitions/description"
+    },
+    "id": {
+      "$ref": "#/definitions/id"
+    },
+    "image": {
+      "$ref": "#/definitions/image"
+    },
+    "implementation": {
+      "$ref": "#/definitions/implementation"
+    },
+    "instructions": {
+      "$ref": "#/definitions/instructions"
+    },
+    "keywords": {
+      "$ref": "#/definitions/keywords"
+    },
+    "label": {
+      "$ref": "#/definitions/label"
+    },
+    "metapath": {
+      "$ref": "#/definitions/metapath"
+    },
+    "name": {
+      "$ref": "#/definitions/name"
+    },
+    "namespace": {
+      "$ref": "#/definitions/namespace"
+    },
+    "notes": {
+      "$ref": "#/definitions/notes"
+    },
+    "options": {
+      "$ref": "#/definitions/options"
+    },
+    "outputs": {
+      "$ref": "#/definitions/outputs"
+    },
+    "path": {
+      "$ref": "#/definitions/path"
+    },
+    "shortTitle": {
+      "$ref": "#/definitions/shortTitle"
+    },
+    "title": {
+      "$ref": "#/definitions/title"
+    },
+    "updated": {
+      "$ref": "#/definitions/date"
+    },
+    "version": {
+      "$ref": "#/definitions/version"
+    }
+  },
+  "required": [
+    "name",
+    "namespace",
+    "metapath",
+    "title",
+    "description",
+    "implementation"
+  ],
+  "title": "Step",
+  "type": "object"
+}

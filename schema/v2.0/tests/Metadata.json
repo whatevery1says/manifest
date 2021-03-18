@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "test_metadata",
+  "namespace": "we1sv2.0",
+  "metapath": "Corpus,collection,Metadata",
+  "title": "Test Metadata Title",
+  "description": "Test Metadata Description",
+  "id": "1234",
+  "_id": "1234",
+  "image": "image.png",
+  "keywords": ["a", "b", "c"],
+  "label": "TML",
+  "notes": ["note1", "note2", "note3"],
+  "shortTitle": "TMT",
+  "updated": {
+    "start": "2020-01-01T01:01:01Z"
+  },
+  "version": "1.0.0",
+  "date": "2020-01-01",
+  "documentType": "newspapers",
+  "encoding": "UTF-8",
+  "format": "docx",
+  "mediatype": "application/docx"
+}

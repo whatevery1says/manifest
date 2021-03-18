@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "name": "test_raw_data",
+  "namespace": "we1sv2.0",
+  "metapath": "Corpus,collection,RawData",
+  "title": "Test RawData Title",
+  "description": "Test RawData Description",
+  "id": "1234",
+  "_id": "1234",
+  "image": "image.png",
+  "keywords": ["a", "b", "c"],
+  "label": "TRDL",
+  "licenses": [
+    {
+      "name": "ODC-PDDL-1.0",
+      "path": "http://opendatacommons.org/licenses/pddl/",
+      "title": "Open Data Commons Public Domain Dedication and License v1.0"
+    }
+  ],
+  "notes": ["note1", "note2", "note3"],
+  "shortTitle": "TRDT",
+  "updated": {
+    "start": "2020-01-01T01:01:01Z"
+  },
+  "version": "1.0.0",
+  "date": "2020-01-01",
+  "documentType": "newspapers",
+  "OCR": "false",
+  "relationships": [
+    {"isPartOf": "Corpus,collection1,"},
+    {"hasPart": "Corpus,collection2"}
+  ]
+}
